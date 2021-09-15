@@ -1,0 +1,334 @@
+<!-- Видео урок #2 https://www.youtube.com/watch?v=92qTCD4JwCE -->
+
+<!DOCTYPE html>
+<!-- эта запись говорит браузеру что он сейчас будет иметь дело с html5 -->
+
+<!-- основной тег html c атрибутом lang="ru" - здесь обычно указывают язык, 
+	на котором написано большинство текстов на странице. -->
+<html lang="ru">
+
+<head>
+	<!-- тег head не видимый для глаз наших и пользователя, внутри это тега хранятся некие глобальные 
+		настройки html страницы, все что внутри head оно не попадает в браузер, оно его настраивает -->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- он отвечает за адаптив -->
+	<title>Lesson 2</title>
+</head>
+
+<body>
+	<div id="top"></div> <!-- что бы сделать div сразу с id пишем #top -->
+
+	<!-- Анатомия тега с закрывающим элементом -->
+	<!-- 
+		<имя_тега атрибут="значение атрибута"> - открывающий элемент
+			содержимое тега
+		</имя_тега> - закрывающий элемент
+		 -->
+
+
+	<div id="id-name" class="class-name" title="Всплывающий текст">
+		Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam mollitia, cum, distinctio nihil autem
+		blanditiis quis vitae eligendi iure quae aliquid,
+		neque exercitationem architecto doloremque sapiente ex at aut porro!
+	</div>
+
+	<!-- Атрибут title="" отвечает за всплывающую подсказку, если навести мышью на объект -->
+
+	<!-- -------------------------------------------------- -->
+	<!-- Теги строительные (блочные) -->
+
+	<div></div>
+	<!-- это свободный тег, и он не имеент никакого предназначения,(можем его вольно использовать) 
+	то есть внутри этого тега может быть все что угодно, и этот тег ничего не значит -->
+
+	<!-- Это теги у которых есть предназначение, они симантические -->
+	<header></header>
+	<!-- он определяет(описывает) некую верхнюю часть сайта, либо верхнюю часть некого блока -->
+	<!-- header можно использовать несколько раз на странице,
+		 не обязательно его использовать 1 раз на странице, 
+		 потому что у каждого отдельного сектора блока тоже может быть свой header -->
+
+	<nav></nav>
+	<!-- внутри этого тега принято помещать некий меню, 
+		хлебные крошки, и любую другую навигацию. Этот тег может находиться внутри header, а внутри nav можно помешать div-->
+
+
+	<main></main><!-- описывает уникальную часть(контент) страницы(то есть весь контент между header и footer) -->
+	<!-- Тег main принято использовать 1 раз, так как 'книжное' описание тега main это
+	основной уникальный контент данной страници -->
+
+
+	<footer></footer>
+	<!-- он определяет(описывает) некую нижнюю часть сайта, либо нижнюю часть некого блока -->
+	<!-- footer можно использовать несколько раз на странице,
+		 не обязательно его использовать 1 раз на странице, 
+		 потому что у каждого отдельного сектора блока тоже может быть свой footer -->
+	<!-- Своей структурой, своим поведением, своими свойствами эти все теги что выше абсолютно ничем не отличаются друг от друга-->
+
+	<div>
+		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti molestiae praesentium quos dolorem nesciunt
+		perspiciatis maxime deleniti at blanditiis, hic, architecto est iste nemo eum exercitationem dolor voluptatibus
+		eius laudantium.
+	</div>
+	<header>
+		Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur eum pariatur minima eos, fugit unde, ipsam
+		quis mollitia id laboriosam, molestiae modi alias consectetur cum! Odit et sequi velit impedit.
+	</header>
+
+	<!-- Пример -->
+
+	<header>
+		<div>
+			<a href=""></a>
+		</div>
+		<nav>
+			<ul>
+				<li>
+					<a href=""></a>
+				</li>
+				<li>
+					<a href=""></a>
+				</li>
+				<li>
+					<a href=""></a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<div class="text">
+			<!-- Гораздо проще работать собирая элементы в своего родителя, это позволяет нам очень тонко и четко разделять, очень хорошо читать дизайн -->
+			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere minima dolorum rem beatae explicabo
+				necessitatibus. Iste, eligendi, placeat adipisci vero doloribus voluptatibus voluptatem sit sint
+				exercitationem reprehenderit ab quasi quaerat!</p>
+			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere minima dolorum rem beatae explicabo
+				necessitatibus. Iste, eligendi, placeat adipisci vero doloribus voluptatibus voluptatem sit sint
+				exercitationem reprehenderit ab quasi quaerat!</p>
+			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere minima dolorum rem beatae explicabo
+				necessitatibus. Iste, eligendi, placeat adipisci vero doloribus voluptatibus voluptatem sit sint
+				exercitationem reprehenderit ab quasi quaerat!</p>
+			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere minima dolorum rem beatae explicabo
+				necessitatibus. Iste, eligendi, placeat adipisci vero doloribus voluptatibus voluptatem sit sint
+				exercitationem reprehenderit ab quasi quaerat!</p>
+			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere minima dolorum rem beatae explicabo
+				necessitatibus. Iste, eligendi, placeat adipisci vero doloribus voluptatibus voluptatem sit sint
+				exercitationem reprehenderit ab quasi quaerat!</p>
+			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere minima dolorum rem beatae explicabo
+				necessitatibus. Iste, eligendi, placeat adipisci vero doloribus voluptatibus voluptatem sit sint
+				exercitationem reprehenderit ab quasi quaerat!</p>
+			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere minima dolorum rem beatae explicabo
+				necessitatibus. Iste, eligendi, placeat adipisci vero doloribus voluptatibus voluptatem sit sint
+				exercitationem reprehenderit ab quasi quaerat!</p>
+		</div>
+
+	</main>
+	<footer></footer>
+
+	<!-- Теги для контента -->
+
+	<!-- Заголовки (блочный) -->
+	<!-- Теги предназначеные для вывода заголовка это теги группы h(имеют втроенные стили - это называется академический стиль) -->
+	<!-- Чем меньше цифра тем меньше значимость этого тега -->
+	<h1>Главный заголовок</h1>
+	<!-- h1 стоит использовать один раз на странице, и выделять им самый главный заголовок. 
+		Все другие h можно использовать сколько угодно на одной и той же странице, потому что неглавных 
+		заголовков по логике может быть сколько угодно -->
+	<h2>Не самый главный заголовок</h2>
+	<h3>Заголовок меньше</h3>
+	<h4>Заголовок еще меньше</h4>
+	<h5>Заголовок еще еще меньше</h5>
+	<h6>Заголовок еще еще еще меньше</h6>
+
+	<!-- Вывод текста (блочный) -->
+	<!-- Блочный тег(сам тег) занимает всю ширину пространства(слева на право) и следующий тег начинается с новой строки(не подряд за ним) -->
+	<p>
+		<!-- тегами p мы можем делить текст на парраграфы -->
+		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident fuga pariatur consectetur, nobis
+		reprehenderit, suscipit, ab aut sint vitae et eligendi tempora recusandae nemo adipisci dolorem? Odio iusto
+		fugiat rerum.
+	</p>
+
+	<!-- Маркированный список (блочный) -->
+	<!-- ul это не самостоятельный тег. Тоесть ul здесь является контейнером. Отдельно li без ul как и ul без li использовать нельзя -->
+	<ul>
+		<li></li>
+	</ul>
+
+	<!-- Нумерованный список (блочный) -->
+	<ol>
+		<li></li>
+	</ol>
+
+	<!-- Изображение (блочно-строчный) -->
+	<img src="" alt="">
+	<!-- img без закрывающего элемента потому что в этот тег мы не можем ничего внутрь поместить, 
+		по этому здесь сущесвуют обязательные атрибуты src=""(указываем путь к картинке) 
+		alt=""(альтернативный текст, он имент много предназначения: 
+		поисковая оптимизация SEO - поисковый робот будет ассоциировать изображение с текстом
+		 кот. указано в alt; алтернативный текст на тот случай если у нас картинка сломается 
+		 и третее предназначение это доступность - роботы, ридеры считывают изображение, 
+		 то есть они диктуют не зрячаму пользователю картинку )
+			Тег img является уникальным в своем роде, так как он является блочно-строчным тегом. 
+			Блочно-строчная структура отличается не только в html, но и в применении некоторых css свойст, 
+		на строчные теги ряд css свойств не действуют совсем но на блочно-столчный тег как на img действует,
+ 		по этому в этом есть различие, он является блочно-строчным тегом 
+ 		потому что он в html ведет себя как строчный тег, но с применением css он может на себя 
+ 		принимать те свойства которые подвластны только блочным тегам.
+	У img есть атрибуты width, height - мы можем задавать размеры изображений, 
+	и где то в статьях пишут что нам нужно это делать. Но задав какие то фиксированые размеры изображению
+	оно у нас не поместиться, не влезит в мобильный экран(у нас произойдет масштабирование, 
+	не будет адаптации, будет просто уменьшение всего контента)
+-->
+
+
+	<!-- Выделение текста (строчный) -->
+	<!-- Строчный тег - его ширина равна ширине его контента, 
+		он в отличии от блочного тега не занимает всю ширину, он занимает ровно такую ширину сколько в нем контента. 
+		Если мы поставим 2 коротких span рядом то они у нас станут вряд один за другим. Если есть место 
+		то строчные теги будут стремиться выстроиться в ряд , то есть если мы начнем их щемить то они начнут перетекать
+		 и в конце концов они все равно будут вряд как строка заламывается в местах пробелов в отличии от блочных, 
+		 блочные не зависимо от наполнения они будут начинаться каждын с новой строки -->
+	<span></span>
+	<mark></mark>
+
+	<!-- Перевод строки -->
+	<br><!-- это сокращение от break, его прямое предназначение это перевод строки внутри параграфа <p> -->
+
+	<!-- Ссылка (строчный) -->
+	<a target="_blank" href="https://google.com">Google</a>
+	<!-- href="" сюда мы пишем адрес куда хотим послать пользователя -->
+	<!-- target="_blank" он дает то что наша ссылка откроется в новом окне. 
+	Его принято указывать тогла когда у нас появляется ссылка на странице кот. ведет на некий внешний ресурс,
+то есть ссыоки кот. ведут на этот же сайт но на другую страницу мы target="_blank" не указываем,
+ для ссылки кот. ведет куда то вообще на другой сайт там мы указываем target="_blank", что б пользователь не уходил с текущего 
+сайта(это тоже довольно удобно и важно). Также ссылка может вести пользователя внутрь страницы -->
+
+
+	<!-- В теги для контента мы не вкладываем строительные теги за исключением ссылки <a href=""></a>. 
+	В ссылку можно вкладывать абсолютно любые теги. Потому что ссылка может быть большим блоком 
+	с другим контентом: с текстом, с изображением и это все может быть ссылкой-->
+
+	<!-- Пример -->
+	<h1>Заголовок статьи</h1>
+	<p>
+		Lorem ipsum, <span>dolor sit amet consectetur</span> adipisicing elit. <mark>Provident</mark> fuga pariatur
+		consectetur, <br> nobis reprehenderit, suscipit, ab aut sint vitae et eligendi tempora recusandae nemo adipisci
+		dolorem? Odio iusto fugiat rerum.
+	</p>
+	<ul>
+		<li><a href="#p1">Пункт №1</a></li><!-- href="#p1"- такой подход используется редко -->
+		<li><a href="#p2">Пункт №2</a>
+			<ul>
+				<li>Подпункт №1</li>
+				<li>Подпункт №2</li>
+				<li>Подпункт №3</li>
+				<li>Подпункт №4</li>
+			</ul>
+		</li>
+		<li>Пункт №3</li>
+	</ul>
+	<p>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente aspernatur atque error id, est exercitationem
+		tempora cumque at in veniam asperiores tenetur maiores a culpa ullam eligendi. Quaerat, totam aliquid?
+	</p>
+	<h2>Подзаголовок статьи</h2>
+	<p>
+		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident fuga pariatur consectetur, nobis
+		reprehenderit, suscipit, ab aut sint vitae et eligendi tempora recusandae nemo adipisci dolorem? Odio iusto
+		fugiat rerum.
+	</p>
+	<p>
+		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident fuga pariatur consectetur, nobis
+		reprehenderit, suscipit, ab aut sint vitae et eligendi tempora recusandae nemo adipisci dolorem? Odio iusto
+		fugiat rerum.
+	</p>
+	<p>
+		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident fuga pariatur consectetur, nobis
+		reprehenderit, suscipit, ab aut sint vitae et eligendi tempora recusandae nemo adipisci dolorem? Odio iusto
+		fugiat rerum.
+	</p>
+	<p>
+		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident fuga pariatur consectetur, nobis
+		reprehenderit, suscipit, ab aut sint vitae et eligendi tempora recusandae nemo adipisci dolorem? Odio iusto
+		fugiat rerum.
+	</p>
+	<p>
+		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident fuga pariatur consectetur, nobis
+		reprehenderit, suscipit, ab aut sint vitae et eligendi tempora recusandae nemo adipisci dolorem? Odio iusto
+		fugiat rerum.
+	</p>
+	<p>
+		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident fuga pariatur consectetur, nobis
+		reprehenderit, suscipit, ab aut sint vitae et eligendi tempora recusandae nemo adipisci dolorem? Odio iusto
+		fugiat rerum.
+	</p>
+	<p>
+		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident fuga pariatur consectetur, nobis
+		reprehenderit, suscipit, ab aut sint vitae et eligendi tempora recusandae nemo adipisci dolorem? Odio iusto
+		fugiat rerum.
+	</p>
+	<p>
+		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident fuga pariatur consectetur, nobis
+		reprehenderit, suscipit, ab aut sint vitae et eligendi tempora recusandae nemo adipisci dolorem? Odio iusto
+		fugiat rerum.
+	</p>
+	<p>
+		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident fuga pariatur consectetur, nobis
+		reprehenderit, suscipit, ab aut sint vitae et eligendi tempora recusandae nemo adipisci dolorem? Odio iusto
+		fugiat rerum.
+	</p>
+	<p>
+		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident fuga pariatur consectetur, nobis
+		reprehenderit, suscipit, ab aut sint vitae et eligendi tempora recusandae nemo adipisci dolorem? Odio iusto
+		fugiat rerum.
+	</p>
+	<p>
+		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident fuga pariatur consectetur, nobis
+		reprehenderit, suscipit, ab aut sint vitae et eligendi tempora recusandae nemo adipisci dolorem? Odio iusto
+		fugiat rerum.
+	</p>
+	<p id="p1">
+		<!-- id="p1" второрого такого id на сайте быть не может, это ошибка -->
+		Я пункт №1. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident fuga pariatur consectetur, nobis
+		reprehenderit, suscipit, ab aut sint vitae et eligendi tempora recusandae nemo adipisci dolorem? Odio iusto
+		fugiat rerum.
+	</p>
+	<p id="p2">
+		Я пункт №2. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident fuga pariatur consectetur, nobis
+		reprehenderit, suscipit, ab aut sint vitae et eligendi tempora recusandae nemo adipisci dolorem? Odio iusto
+		fugiat rerum.
+	</p>
+	<p>
+		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident fuga pariatur consectetur, nobis
+		reprehenderit, suscipit, ab aut sint vitae et eligendi tempora recusandae nemo adipisci dolorem? Odio iusto
+		fugiat rerum.
+	</p>
+	<ol>
+		<li>Пункт</li>
+		<li>Пункт</li>
+		<li>Пункт
+			<ol>
+				<li>Пункт</li>
+				<li>Пункт</li>
+				<li>Пункт</li>
+				<li>Пункт</li>
+				<li>Пункт</li>
+				<li>Пункт</li>
+			</ol>
+		</li>
+		<li>Пункт</li>
+		<li>Пункт</li>
+	</ol>
+	<img src="img/01.png" width="1136" height="632" alt="Стройка"> <span>Я СПАН</span>
+	<p>
+		Lorem ipsum dolor sit amet <a href="https://google.com">consectetur</a> adipisicing elit. Sapiente aspernatur
+		atque error id, est exercitationem tempora cumque at in veniam asperiores tenetur maiores a culpa ullam
+		eligendi. Quaerat, totam aliquid?
+	</p>
+	<a href="#top">Вверх</a>
+
+	<!-- Валидатор HTML https://validator.w3.org/ -->
+</body>
+
+</html>
