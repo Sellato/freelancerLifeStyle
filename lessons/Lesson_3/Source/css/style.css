@@ -1,0 +1,103 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+li {
+  list-style: none;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+img {
+  vertical-align: top;
+}
+/* ---------------------------------- */
+h1.top-content {
+  color: #26001b;
+}
+.top-content .top-paragraph {
+  color: #ce1f6a;
+}
+h3.menu {
+  color: #9ede73;
+}
+a.purple-link {
+  color: #52057b;
+}
+div p {
+  color: #eb5e0b;
+}
+.link {
+  color: #ff884b;
+}
+.content .blue-color {
+  color: #3a6351;
+}
+.content span {
+  color: #fa26a0;
+}
+span.orange {
+  color: #fb7813;
+}
+p.text.navy-text {
+  color: #0c005a;
+}
+.content .text {
+  color: #f68787;
+}
+.carrot .green-text {
+  color: #00bd56;
+}
+h2.title {
+  color: #f0134d;
+}
+.page * {
+  color: #ffc107;
+}
+.herbst .title {
+  color: #b97a95;
+}
+.yellow-carrots {
+  color: #f7be16;
+}
+.herbst .descr {
+  color: salmon;
+}
+.watermelon * {
+  color: #158467;
+}
+.watermelon h2,
+.watermelon span {
+  color: #e9b0df;
+}
+.blue-descr {
+  color: #0c005a;
+}
+.tomatoes .title,
+.tomatoes .descr,
+.tomatoes .teal-color {
+  color: #48e0e4;
+}
+.chili span,
+.chili .pink {
+  color: #fa26a0;
+}
+p.text.text-yellow {
+  color: #f7be16;
+}

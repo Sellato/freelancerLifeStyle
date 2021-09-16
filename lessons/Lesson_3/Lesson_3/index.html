@@ -1,15 +1,145 @@
+<!-- Урок 3 https://www.youtube.com/watch?v=Vf1LHfmZFPA -->
+
+<!-- Браузер читает html страницу с верху-вниз с влева на право -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Lesson 3</title>
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" href="css/style.css"><!-- rel="stylesheet" - какой тип файлов мы подключаем -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Lesson 3</title>
+		<style>
+		p {
+			/* color: green; */
+		}
+	</style>
+	</head>
 
-<body>
+	<body>
 
-</body>
+		<!-- (1) Инлайновые стили (атрибут style) Наивысший приоритет -->
+		<!-- (2) Обращение из HTML (тег style) Наименьший приоритет -->
+		<!-- (3) Подключение внешнего файла (тег link + файл *.css) Средний приоритет 
+			Приоритетность у файла выше чем у Обращение из HTML (тег style) -->
+
+		<!-- Пишем имена классов:
+			Латиница!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			Без пробелов
+			Одним словом
+			Нижний регистр
+		-->
+		<header>
+			<h1>Я заголовок</h1>
+			<nav>
+				<ul>
+					<li>
+						<a href="">Я ссылка</a>
+					</li>
+					<li>
+						<a href="">Я ссылка</a>
+					</li>
+					<li>
+						<a href="">Я ссылка</a>
+					</li>
+					<li>
+						<a href="">Я ссылка</a>
+					</li>
+					<li>
+						<a href="">Я ссылка</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<div>
+				<p id="menu">
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim quod similique doloremque quaerat ab
+					totam? Quae pariatur repellat suscipit cumque vel repellendus consequatur voluptas veniam, ut voluptatem
+					facere amet asperiores.
+				</p>
+				<p>
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim quod similique doloremque quaerat ab
+					totam? Quae pariatur repellat suscipit cumque vel repellendus consequatur voluptas veniam, ut voluptatem
+					facere amet asperiores.
+				</p>
+				<!-- style="color:red;" -->
+				<p id="main-text" class="text">
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim quod similique doloremque quaerat ab
+					totam? Quae pariatur repellat suscipit cumque vel repellendus consequatur voluptas veniam, ut voluptatem
+					facere amet asperiores.
+				</p>
+				<p>
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim quod similique doloremque quaerat ab
+					totam? Quae pariatur repellat suscipit cumque vel repellendus consequatur voluptas veniam, ut voluptatem
+					facere amet asperiores.
+				</p>
+				<p>
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim quod similique doloremque quaerat ab
+					totam? Quae pariatur repellat suscipit cumque vel repellendus consequatur voluptas veniam, ut voluptatem
+					facere amet asperiores.
+				</p>
+			</div>
+			<div class="content">
+				<img width="200" src="img/01.png" alt="Здание">
+				<p class="content__item">
+					Я контент. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci nulla tempora repellendus
+					totam amet alias assumenda quia sapiente, labore pariatur quae officia id, architecto dolores minima
+					excepturi explicabo accusantium impedit!
+				</p>
+				<span class="content__text">
+					Я спан первого уровня. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quae quasi magni
+					soluta perspiciatis repellendus qui id dolorum, magnam rerum tempore doloremque harum eaque corrupti!
+					Fugit corrupti repellat deserunt totam.
+				</span>
+				<p class="content__item">
+					<span class="content__text">
+						Я спан первого уровня. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quae quasi
+						magni
+						soluta perspiciatis repellendus qui id dolorum, magnam rerum tempore doloremque harum eaque
+						corrupti!
+						Fugit corrupti repellat deserunt totam.
+					</span>
+				</p>
+				<p class="content__text">
+					<span>
+						Я спан первого уровня. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quae quasi
+						magni
+						soluta perspiciatis repellendus qui id dolorum, magnam rerum tempore doloremque harum eaque
+						corrupti!
+						Fugit corrupti repellat deserunt totam.
+					</span>
+				</p>
+
+			</div>
+		</main>
+		<footer>
+			<span class="text blue-text">Я подвал</span>
+			<p class="text paragraph">
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim quod similique doloremque quaerat ab totam?
+				Quae pariatur repellat suscipit cumque vel repellendus consequatur voluptas veniam, ut voluptatem facere
+				amet asperiores.
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim quod similique doloremque quaerat ab totam?
+				Quae pariatur repellat suscipit cumque vel repellendus consequatur voluptas veniam, ut voluptatem facere
+				amet asperiores.
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim quod similique doloremque quaerat ab totam?
+				Quae pariatur repellat suscipit cumque vel repellendus consequatur voluptas veniam, ut voluptatem facere
+				amet asperiores.
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim quod similique doloremque quaerat ab totam?
+				Quae pariatur repellat suscipit cumque vel repellendus consequatur voluptas veniam, ut voluptatem facere
+				amet asperiores.
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim quod similique doloremque quaerat ab totam?
+				Quae pariatur repellat suscipit cumque vel repellendus consequatur voluptas veniam, ut voluptatem facere
+				amet asperiores.
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim quod similique doloremque quaerat ab totam?
+				Quae pariatur repellat suscipit cumque vel repellendus consequatur voluptas veniam, ut voluptatem facere
+				amet asperiores.
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim quod similique doloremque quaerat ab totam?
+				Quae pariatur repellat suscipit cumque vel repellendus consequatur voluptas veniam, ut voluptatem facere
+				amet asperiores.
+			</p>
+		</footer>
+	</body>
 
 </html>
