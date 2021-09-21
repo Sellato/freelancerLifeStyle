@@ -1,0 +1,271 @@
+/* &display=swap&subset=cyrillic-ext  */
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic&display=swap&subset=cyrillic-ext ");
+
+@font-face {
+	font-family: "Baskerville 10 Pro";
+	src: url("../fonts/Baskerville10ProMedium.woff2") format("woff2"), url("../fonts/Baskerville10ProMedium.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* option + command + f  для замены   */
+/* ОБНУЛЕНИЕ СТИЛЕЙ */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+li {
+	list-style: none;
+}
+a,
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+img {
+	vertical-align: top;
+}
+html {
+	font-size: 16px; /* по умолчанию */
+}
+body {
+	font-family: "Roboto", sans-serif;
+	line-height: 1;
+	color: #000;
+}
+/* ------------------------------ */
+.header {
+	padding: 40px 0;
+	/* text-align: center; */
+}
+h1.main-title {
+	font-family: "Baskerville 10 Pro", "Roboto", sans-serif;
+	font-size: 50px;
+	font-weight: 500;
+	word-spacing: 5px;
+	letter-spacing: 4px;
+	text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
+}
+.header .main-title {
+}
+.header div {
+	margin: 20px 0px 0px 0px;
+}
+.tag-block + h2 {
+	font-style: italic;
+	font-weight: 500;
+	margin: 20px 0px 0px 0px;
+	font-size: 18px;
+}
+
+.header .tag-block a {
+	text-transform: none;
+	font-weight: 700;
+}
+.header .tag-block a.up-text,
+span.up-text {
+	text-transform: uppercase;
+}
+.tag-block a {
+	margin: 0px 15px 0px 0px;
+	letter-spacing: 1px;
+}
+.tag-block .link span,
+a.link-text {
+	font-size: 14px;
+	color: #222;
+}
+
+.menu > h3 {
+	font-size: 17px;
+	font-style: oblique;
+	text-transform: uppercase;
+	text-decoration: underline;
+	color: lawngreen;
+}
+h3 + ol,
+ul li {
+	margin: 10px 0px 0px 0px;
+}
+.menu > *,
+.menu li a.link {
+	font-family: "Bebas Neue", cursive;
+	color: #fc5404;
+}
+.menu li a.link.up-text,
+.news-block > h2 {
+	text-transform: uppercase;
+	font-family: "Bebas Neue", serif;
+	font-size: 15px;
+	letter-spacing: 3px;
+	word-spacing: 10px;
+	text-decoration: line-through;
+	color: #d89216;
+}
+.menu a.link {
+	font-family: "Roboto", serif;
+	font-size: 19px;
+	color: #f05454;
+}
+.tag-block a {
+	box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+.menu .link span {
+	letter-spacing: 2px;
+	color: #f05454;
+	text-transform: uppercase;
+}
+li.up-text {
+	text-transform: uppercase;
+}
+.menu-block + div {
+	margin: 15px 0px 0px 0px;
+}
+.text-block .text a {
+	color: #e94560;
+}
+.text-block p span {
+	text-decoration: underline;
+}
+p strong {
+	font-family: "Bebas Neue", cursive;
+	font-size: 19px;
+	color: #9153f4;
+	text-decoration: underline;
+}
+.header .text-block .text ~ p {
+	font-size: 18px;
+	line-height: 150%;
+	word-spacing: 12px;
+	color: #ad62aa;
+	text-shadow: 1px 0px 1px #cccccc, 0px 1px 1px #eeeeee, 2px 1px 1px #cccccc, 1px 2px 1px #eeeeee, 3px 2px 1px #cccccc, 2px 3px 1px #eeeeee, 4px 3px 1px #cccccc, 3px 4px 1px #eeeeee, 5px 4px 1px #cccccc, 4px 5px 1px #eeeeee, 6px 5px 1px #cccccc, 5px 6px 1px #eeeeee, 7px 6px 1px #cccccc;
+}
+.page {
+	padding: 50px 0px;
+}
+.page div {
+	margin: 20px 0px 0px 0px;
+}
+.page p {
+	line-height: 140%;
+	text-indent: 30px;
+	margin: 10px 0px 0px 0px;
+}
+.page p span {
+	font-family: "Bebas Neue", cursive;
+	font-size: 20px;
+	line-height: 150%;
+	letter-spacing: 1px;
+	color: #f30a49;
+	text-shadow: 4px 4px 3px #f30a49;
+}
+.header span.through,
+.page span.through {
+	text-decoration: line-through;
+	text-shadow: none;
+	color: #d89216;
+}
+.page .text span.through {
+	line-height: 100%;
+	letter-spacing: 0;
+}
+.stake div.text-block > p.text + p.text {
+	color: coral;
+	font-weight: 100;
+}
+.stay p.text-underline {
+	font-family: "Baskerville 10 Pro", "Roboto", sans-serif;
+	font-size: 17px;
+	text-decoration: underline;
+	font-style: italic;
+	text-shadow: 13px 7px 2px rgba(195, 4, 160, 0.6);
+}
+.text-block p mark {
+	color: #951556;
+}
+.text span > span {
+	letter-spacing: 3px;
+}
+.link .probably {
+	font-style: oblique;
+}
+a.advices,
+a.probably {
+	font-family: "Baskerville 10 Pro", "Roboto", sans-serif;
+	font-style: italic;
+	color: #ff5722;
+	text-decoration: underline;
+}
+.winner .link + div h3 a {
+	color: #1597bb;
+	font-family: "Baskerville 10 Pro", "Roboto", sans-serif;
+	font-style: italic;
+	font-size: 18px;
+}
+.winner a.link.link-text {
+	font-size: 17px;
+	color: #ff00e4;
+	text-shadow: 4px -3px 2px #ff00e4;
+	text-decoration: none;
+	font-style: normal;
+}
+.winner .link {
+	text-decoration: underline;
+}
+div.image {
+	margin: 20px 0px 0px 0px;
+}
+.image h3 + img {
+	margin: 20px 0px 0px 0px;
+}
+footer.footer {
+	text-align: center;
+	padding: 40px 0;
+}
+.news-block .news,
+.news-block .news h3.data {
+	margin: 20px 0px 0px 0px;
+}
+.news-block > .title + div {
+	margin: 30px 0px;
+	font-weight: 900;
+	letter-spacing: 10px;
+}
+.news-block div.news-wrapper > div > a.link > span + span {
+	font-style: italic;
+	color: #ff5722;
+	text-decoration: underline;
+}
+.news-wrapper > div > a.link > span {
+	letter-spacing: 1px;
+	color: #ff00e4;
+	text-decoration: underline;
+}
+.news > * {
+	color: #1597bb;
+	letter-spacing: 3px;
+	font-weight: 300;
+}
+.news > div {
+	margin: 10px 0px 0px 0px;
+	color: coral;
+	font-weight: 600;
+}
+.news img {
+	margin: 0px 5px;
+}
