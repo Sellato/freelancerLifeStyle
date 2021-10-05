@@ -1,0 +1,253 @@
+/* 
+&display=swap
+&subset=cyrillic-ext 
+*/
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,600&display=swap");
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-Black.woff2") format("woff2"), url("../fonts/Roboto-Black.woff") format("woff");
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-Bold.woff2") format("woff2"), url("../fonts/Roboto-Bold.woff") format("woff");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* ОБНУЛЕНИЕ СТИЛЕЙ */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+li {
+	list-style: none;
+}
+a,
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+img {
+	vertical-align: top;
+}
+html,
+body {
+	height: 100%;
+}
+html {
+	font-size: 16px; /* по умолчанию */
+}
+body {
+	font-family: "Roboto", sans-serif;
+	/* line-height: 1; */
+	line-height: 24px;
+	background-color: #f5f5f5;
+}
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	/* padding: 50px 20px; */
+}
+/* ---------------------------------------------------------------- */
+.whoweare .work-2,
+.work-3 {
+	color: #4b4b4b; /* это цвет по умолчанию для 3-ех первых работ */
+}
+
+/* ------------------------------ */
+/* eCSStractor com+up+z */
+.whoweare {
+	/* главный блок */
+	padding: 0px 0px 170px 0px; /* изображение налазит непосредственно на блок(кот. ниже(текст)), по этому мы обращаемся к объекту( на пример мы можем сделать отступ от контейнера или внутренний отступ от главного блока).
+	Вниз мы добавляем 120px + еще сам отступ 40px. То есть  картинка выпирает вниз на 120px и 40px это отступ от блока с текстом.*/
+}
+.whoweare__container {
+	/* Не задаем никакой высоты!!! */
+	max-width: 1020px; /* 1020px в ширину и он расположен по центру полотна. Полотно - это вся ширина макета. Вся ширина макета подразумевает что этот макет может расширятся на любую
+	ширину любого экрана(самого широкого) . А контерктно этот блок ограничен на 1020px по ширине*/
+	margin: 0px auto; /*  выстроить по центру полотна */
+	border: 1px solid transparent;
+	padding: 100px 87px 0px 87px;
+	background: #fff url("../img/bg.png") 100% 0 no-repeat;
+}
+.whoweare__content {
+}
+.whoweare__subtitle {
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 27px; /* что бы выровнять с иконкой, мы можем взять высоту картинки, она у нас 27px и такой поставить	line-height, место 24 поставить 27. Это пример в данной задаче, в других случаях такого решения не будет*/
+	letter-spacing: 2.5px;
+	text-transform: uppercase;
+	margin: 0px 0px 28px 0px;
+	background: url("../icons/02.svg") 0 0 no-repeat;
+	padding: 0px 0px 0px 30px;
+}
+.whoweare__title {
+	color: #02133c;
+	font-weight: 900;
+	font-size: 36px;
+	line-height: 42px;
+	max-width: 583px;
+	margin: 0px 0px 33px 0px;
+}
+.whoweare__text {
+	font-size: 16px;
+	line-height: 24px;
+	letter-spacing: 0.15px;
+	margin: 0px 0px 52px 0px;
+}
+.whoweare__image {
+	margin: 0px 0px -120px 0px; /* изображение налазит непосредственно на блок, по этому делаем отрицательный внешний отступ вниз */
+}
+.whoweare__image img {
+	max-width: 100%;
+}
+span {
+	font-size: 25px;
+	color: coral;
+	font-weight: 700;
+	text-decoration: underline;
+}
+
+/*---------------------------*/
+
+.work-2 {
+	max-width: 1020px;
+	margin: 0px auto;
+	min-height: 988px;
+	padding: 200px 87px;
+	background-color: #f5f5f5;
+}
+.work-2 .card {
+	max-width: 324px;
+	min-height: 340px;
+	padding: 50px 44px;
+	background-color: #ffffff;
+	margin: 0px 0px 24px 0px;
+	text-align: center;
+}
+.work-2 .card + div {
+	margin: 0px 0px 0px 0px;
+}
+.work-2 .card img {
+	margin: 0px 0px 33px 0px;
+}
+.work-2 .card .title {
+	font-weight: 900;
+	font-size: 19px;
+	line-height: 26px;
+	margin: 0px 0px 20px 0px;
+}
+.work-2 .card .text {
+	letter-spacing: 0.15px;
+}
+
+.work-3 {
+	max-width: 1039px;
+	margin: 0 auto 100px;
+	padding: 60px 0;
+	font-family: "Poppins";
+	color: #000000;
+	background-color: #ffffff;
+}
+.work-3 .main-wrapper {
+	margin: 0px 0px 0px 50px;
+}
+.work-3 .main-title {
+	font-weight: 600;
+	font-size: 32px;
+	line-height: 48px;
+	margin: 0px 0px 26px 0px;
+}
+.work-3 .subtitle {
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 36px;
+	text-transform: uppercase;
+	margin: 0px 0px 19px 0px;
+}
+.work-3 .terms {
+	font-size: 16px;
+	padding: 35px 0;
+}
+.work-3 .terms .term-item {
+	margin: 0px 0px 25px 0px;
+}
+.term-item .title {
+	font-weight: 600;
+	margin: 0px 0px 25px 0px;
+}
+.work-3 .term-item .subtitle {
+	font-size: 16px;
+	font-weight: 300;
+	margin: 0px 0px 26px 0px;
+}
+.work-3 .term-item .list {
+	font-size: 16px;
+	font-weight: 300;
+}
+
+.term-item .text {
+	line-height: 26px;
+}
+.term-item .text-m {
+	margin: 0px 0px 25px 0px;
+}
+.work-4 {
+	font-family: "Poppins";
+	color: #000000;
+	max-width: 1039px;
+	margin: 0 auto;
+	padding: 85px 46px;
+}
+.work-4 .card {
+	max-width: 527px;
+	margin: 0 auto;
+	min-height: 450px;
+	padding: 50px;
+	background-color: #ffffff;
+}
+.work-4 .card .icon {
+	display: block;
+	margin: 0px 0px 10px 0px;
+}
+.work-4 .card .title {
+	font-weight: 500;
+	font-size: 44px;
+	line-height: 58px;
+	margin: 0px 0px 30px 0px;
+}
+.work-4 .card .text {
+	font-weight: 300;
+	font-size: 18px;
+	line-height: 26px;
+}
