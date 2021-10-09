@@ -1,0 +1,6 @@
+ДОМАШКА №7:
+1) Отрабатываем каждое свойство background.
+2) Стилизируем список так чтобы картинка была справа.
+3) Верстаем блок из макета (Car Repair and Doggie) http://joxi.ru/zANX0BZt8VBaWm
+4) Верстаем блок из макета (Car Repair and Doggie) http://joxi.ru/KAxDeMRTv6Mo1A Только то что на скрине!
+Экстра задача: Верстаем блок из макета (Car Repair and Doggie)  http://joxi.ru/V2VJnvkt8axZb2 

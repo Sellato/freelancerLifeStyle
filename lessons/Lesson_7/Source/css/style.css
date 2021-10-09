@@ -1,0 +1,409 @@
+/* 
+&display=swap
+&subset=cyrillic-ext 
+*/
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+Display:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic&display=swap");
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-Black.woff2") format("woff2"), url("../fonts/Roboto-Black.woff") format("woff");
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-Regular.woff2") format("woff2"), url("../fonts/Roboto-Regular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/Roboto-Bold.woff2") format("woff2"), url("../fonts/Roboto-Bold.woff") format("woff");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+/* ОБНУЛЕНИЕ СТИЛЕЙ */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+li {
+	list-style: none;
+}
+a,
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+img {
+	vertical-align: top;
+}
+html,
+body {
+	height: 100%;
+}
+html {
+	font-size: 16px; /* по умолчанию */
+}
+body {
+	line-height: 1;
+	font-family: "Noto Sans Display", sans-serif;
+	background: url("../img/bg.jpeg") 50% / cover fixed;
+}
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	/* padding: 50px 0; */
+}
+/* ---------------------------------------------- */
+.header {
+	padding: 60px 20px;
+	background: url("../icons/04.png") -15px 50% / 200px no-repeat, url("../icons/06.png") 100% 50% / 150px no-repeat, linear-gradient(180deg, rgba(152, 207, 195, 0.8) 20%, rgba(187, 80, 142, 0.9) 100%);
+	margin: 0px 0px 80px 0px;
+}
+
+.header .list {
+	max-width: 775px;
+	margin: 0px auto;
+}
+.header .list li {
+	display: inline-block;
+	margin: 0px 20px 20px 0px;
+}
+.header .link {
+	display: inline-block;
+	border-radius: 20px;
+	padding: 50px;
+	font-size: 22px;
+	font-weight: 700;
+	letter-spacing: 1.5px;
+	color: #480032;
+}
+.header .link-1 {
+	color: #fff;
+	background: #6b48ff url("../icons/01.png") 0 15px no-repeat;
+}
+.header .link-2 {
+	background: #ffef78 url("../icons/02.png") 20px 0 no-repeat;
+}
+.header .link-3 {
+	color: #fff;
+	background: #ff4848 url("../icons/07.png") 0 100% no-repeat;
+}
+.header .link-4 {
+	color: #fff;
+	background: #c2ffd9 url("../icons/09.png") center no-repeat;
+}
+.header .link-5 {
+	background: #f0d9e7 url("../icons/12.png") 10% 50px no-repeat;
+}
+.header .link-6,
+.header .link-7 {
+	color: #fff;
+}
+.header .link-6 {
+	background: #30e3ca url("../icons/14.png") 100% 100% no-repeat;
+}
+.header .link-7 {
+	background: #95389e url("../icons/18.png") 50px 0 no-repeat;
+}
+.header .link-8 {
+	background: #f1f864 url("../icons/17.png") 0 0 / 20px repeat;
+}
+main {
+	max-width: 1400px;
+	margin: 0 auto;
+}
+.pp {
+	padding: 80px 0px;
+}
+.block-1 {
+	margin: 0px 0px 80px 0px;
+}
+
+.block-1 .item {
+	margin: 0px 0px 20px 0px;
+}
+.block-1 .item-1 {
+	font-size: 21px;
+	padding: 50px 25px;
+	background-color: #78dec7;
+}
+.block-1 .item-11 {
+	font-size: 21px;
+	padding: 50px 25px;
+	background: #96baff url("../icons/13.png") 60% 90% no-repeat;
+}
+.block-1 .item-2 {
+	height: 400px;
+	background: url("../img/05.jpeg") 50% / cover;
+}
+.block-1 .item-3,
+.block-1 .item-4,
+.block-1 .item-5,
+.block-1 .item-6,
+.block-1 .item-7,
+.block-1 .item-8 {
+	display: inline-block;
+	min-width: 444px;
+	height: 400px;
+	margin: 0px 20px 20px 0px;
+}
+.block-1 .item-4 + div,
+.block-1 .item-7 + div {
+	margin: 0px 0px 20px 0px;
+}
+.block-1 .item-3 {
+	background: hsla(96, 62%, 66%, 0.8) url("../icons/02.png") 50% no-repeat;
+}
+.block-1 .item-4 {
+	background: hsla(19, 98%, 50%, 0.7) url("../icons/01.png") 0 0 space;
+}
+.block-1 .item-5 {
+	background: #ff005c url("../icons/05.png");
+	background-repeat: repeat-x;
+}
+.block-1 .item-6 {
+	background: #f5f5f5 url("../icons/07.png") 50%;
+	background-repeat: repeat-y;
+}
+.block-1 .item-7 {
+	background: #28ffbf url("../icons/17.png") right / 70px no-repeat;
+}
+.block-1 .item-8 {
+	background: url("../icons/16.png") 50% 80px no-repeat;
+	background-color: #f2f4c3;
+}
+.block-2 {
+	margin: 0px 0px 80px 0px;
+}
+.block-2 .item {
+	margin: 0px 0px 20px 0px;
+}
+.block-2 .item-1 {
+	height: 400px;
+	background: url("../img/01.jpeg");
+}
+.block-2 .item-2 {
+	height: 600px;
+	background: url("../img/04.jpeg") 0 0 / cover fixed;
+}
+.block-2 .item-3 {
+	height: 500px;
+	background: url("../icons/19.png") 15% 200px / auto no-repeat fixed, url("../icons/19.png") 20% 50% / auto no-repeat fixed, url("../icons/19.png") 80% 200px / auto no-repeat fixed, url("../icons/19.png") 30% 150px / auto no-repeat fixed, url("../icons/19.png") 900px 200px / auto no-repeat fixed, url("../icons/19.png") 75% 350px / auto no-repeat fixed, url("../icons/19.png") 35% 450px / auto no-repeat fixed, url("../icons/19.png") 60% 400px / auto no-repeat fixed, url("../img/07.jpeg") 50% / cover no-repeat;
+	margin: 0px 0px 10px 0px;
+}
+.block-2 .item-4 {
+	height: 500px;
+	background: linear-gradient(45deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%), url("../icons/19.png") 15% 200px / auto no-repeat fixed, url("../icons/19.png") 20% 50% / auto no-repeat fixed, url("../icons/19.png") 80% 200px / auto no-repeat fixed, url("../icons/19.png") 30% 150px / auto no-repeat fixed, url("../icons/19.png") 900px 200px / auto no-repeat fixed, url("../icons/19.png") 75% 350px / auto no-repeat fixed, url("../icons/19.png") 35% 450px / auto no-repeat fixed, url("../icons/19.png") 60% 400px / auto no-repeat fixed, url("../img/05.jpeg") 50% / cover;
+}
+.block-2 .item-5 {
+	height: 1500px;
+	background: url("../icons/19.png") 15% 200px / auto no-repeat fixed, url("../icons/19.png") 20% 50% / auto no-repeat fixed, url("../icons/19.png") 80% 200px / auto no-repeat fixed, url("../icons/19.png") 30% 150px / auto no-repeat fixed, url("../icons/19.png") 900px 200px / auto no-repeat fixed, url("../icons/19.png") 75% 350px / auto no-repeat fixed, url("../icons/19.png") 35% 450px / auto no-repeat fixed, url("../icons/19.png") 60% 400px / auto no-repeat fixed, url("../img/04.jpeg") 0 0 / cover no-repeat;
+}
+.block-2 .item-6 {
+	height: 500px;
+	background: url("../icons/19.png") 15% 200px / auto no-repeat fixed, url("../icons/19.png") 20% 50% / auto no-repeat fixed, url("../icons/19.png") 80% 200px / auto no-repeat fixed, url("../icons/19.png") 30% 150px / auto no-repeat fixed, url("../icons/19.png") 900px 200px / auto no-repeat fixed, url("../icons/19.png") 75% 350px / auto no-repeat fixed, url("../icons/19.png") 35% 450px / auto no-repeat fixed, url("../icons/19.png") 60% 400px / auto no-repeat fixed, url("../img/06.jpeg") 50% / 400px 600px no-repeat;
+}
+.block-3 {
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 0px 20px;
+	background-color: #fff;
+	margin: 0px 0px 80px 0px;
+}
+.block-3 ul li {
+	margin-bottom: 15px;
+	padding: 0px 20px 0px 0px;
+	font-size: 18px;
+	line-height: 1.5;
+	min-height: 24px;
+}
+.block-3 ul li {
+	background: url("../icons/20.png") 100% 2px / 20px no-repeat;
+}
+.block-3 > ul ul li {
+	padding: 0px 0px 0px 20px;
+	background: url("../icons/20.png") 99% 2px/ 20px no-repeat;
+}
+.contacts {
+	color: #4b4b4b;
+	font-family: "Roboto";
+	font-size: 14px;
+	margin: 0px 0px 80px 0px;
+}
+
+.contacts .container {
+	max-width: 240px;
+	margin: 0 auto;
+	background-color: #fff;
+	text-transform: uppercase;
+}
+.contacts .title {
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 22px;
+	letter-spacing: 0.15px;
+	margin: 0px 0px 28px 0px;
+}
+.contacts .list li {
+	margin: 0px 0px 16px 0px;
+	padding: 0px 0px 0px 29px;
+	padding: 0px 0px 0px 29px;
+	font-weight: normal;
+	line-height: 20px;
+	letter-spacing: 0.15px;
+	color: inherit;
+}
+.contacts .adress {
+	background: url("../icons/icon1.png") 0 10% no-repeat;
+}
+.contacts .phone {
+	background: url("../icons/icon2.png") 0 50% no-repeat;
+}
+.contacts .mail {
+	background: url("../icons/icon3.png") 0 50% no-repeat;
+}
+.contacts .data {
+	background: url("../icons/icon4.png") 0 50% no-repeat;
+}
+
+.service {
+	margin: 0px 0px 180px 0px;
+	background: url("../img/Heroshot.png") 0 0 / cover no-repeat;
+}
+
+.service .container {
+	max-width: 1020px;
+	margin: 0 auto;
+	padding: 125px 0 200px;
+	color: #fff;
+	font-family: "Roboto";
+}
+.service .title {
+	max-width: 580px;
+	font-weight: 900;
+	font-size: 56px;
+	line-height: 56px;
+	margin: 0px 0px 50px 0px;
+}
+.service .link {
+	display: inline-block;
+	font-weight: bold;
+	font-size: 12px;
+	letter-spacing: 0.15px;
+	text-transform: uppercase;
+	color: inherit;
+	background: url("../img/arrow.png") 95% 50% no-repeat, url("../img/BG1.png") 100% 0 no-repeat, #c40b0b;
+	padding: 16px 50px 16px 17px;
+}
+.impact {
+	padding: 112px 0px 134px 0px;
+	background: url("../img/bg3.png") 50% / cover no-repeat;
+}
+.impact .top-content {
+	margin: 0 auto 80px;
+	max-width: 1020px;
+}
+.impact .content {
+	font-family: "Roboto";
+	max-width: 1020px;
+	margin: 0 auto;
+	color: #fff;
+}
+
+.impact .titles {
+	display: inline-block;
+	max-width: 411px;
+	margin: 0px 105px 0px 0px;
+}
+.impact .img {
+	display: inline-block;
+	max-width: 498px;
+	vertical-align: top;
+	margin: -186px 0px 0px 0px;
+}
+.impact .subtitle {
+	font-weight: bold;
+	font-size: 12px;
+	letter-spacing: 2.5px;
+	line-height: 24px;
+	color: #d5d5d5;
+	text-transform: uppercase;
+	background: url("../icons/02.svg") 0 -7px no-repeat;
+	padding: 0px 0px 0px 30px;
+	margin: 0px 0px 30px 0px;
+}
+.impact .title {
+	min-width: 500px;
+	font-weight: 900;
+	font-size: 36px;
+	line-height: 42px;
+	color: #fff;
+}
+.impact .container {
+	font-size: 0;
+	margin: 0px -12px;
+}
+.impact .item {
+	min-width: 23%;
+	height: 80px;
+	display: inline-block;
+	vertical-align: top;
+	margin: 0px 40px 0px 0px;
+	font-weight: normal;
+	font-size: 16px;
+	letter-spacing: 0.15px;
+	color: #f5f5f5;
+	padding: 5px 0px 5px 90px;
+}
+.impact .oil {
+	margin: 0px 25px 0px 0px;
+	background: url("../icons/car_oil.png") 0 0 no-repeat;
+}
+.impact .count {
+	font-weight: 900;
+	font-size: 36px;
+	line-height: 42px;
+	color: #c40b0b;
+	margin: 0px 0px 5px 0px;
+}
+.impact .descr {
+	line-height: 24px;
+	max-width: 130px;
+}
+.impact span {
+	display: block;
+}
+.impact .transmis {
+	margin: 0px 25px 0px 0px;
+	background: url("../icons/car_transmission.png") 0 0 no-repeat;
+}
+.impact .alignments {
+	margin: 0px 25px 0px 0px;
+	background: url("../icons/car_alignment.png") 0 0 no-repeat;
+}
+.impact .engines {
+	margin: 0px 0px 0px 0px;
+	background: url("../icons/car_engine_2.png") 0 0 no-repeat;
+}
