@@ -1,0 +1,157 @@
+<!-- УРОК №9 
+	https://youtu.be/oFqzu3IPamo
+ -->
+
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" href="css/style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Lesson 9</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="h`eader"></header>
+			<main class="main">
+				<!-- ------------------------------------------------------------------ -->
+				<!-- Задача №1 (задача высоты)-->
+				<div class="items">Задача №1
+					<!-- У нас будет разная высота, если объекты будут увеличиваться. Общего у этих двух карточек - это общий родительский блок.
+						 Высота родителя будет равна высоте самого выского дочернего блока -->
+					<div class="item">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque ex earum ut labore voluptatem odio at hic, magni dolorum omnis. Maxime excepturi at ex placeat voluptate consequatur beatae aliquam ad!</div>
+					<div class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut sunt numquam placeat rem, ex quod architecto dignissimos aut. Quaerat nostrum repellendus quas repudiandae quibusdam voluptatum, ea laborum inventore est perferendis?</div>
+				</div>
+				<!-- ------------------------------------------------------------------ -->
+				<div class="block">
+					<h1 class="block__title">Я заголовок</h1>
+					<div class="block__sub-title">Я подзаголовок</div>
+					<div class="block__text">
+						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab eius, voluptatum totam ratione, omnis, laborum ipsum nihil at quasi saepe expedita consectetur sit. Iste fugit debitis, optio dolorum molestias placeat?
+					</div>
+					<div class="block__row">
+						<div class="block__column">
+							<div class="block__item"></div>
+						</div>
+						<div class="block__column"></div>
+						<div class="block__column"></div>
+					</div>
+					<a href="" class="block__button">Я ссылка</a>
+
+
+				</div>
+				<!------------------------ работа с  webp ---------------------------->
+				<picture><!-- она служит как контейнер для того что бы мы могли использовать source -->
+					<source srcset="img/Image.webp" type="image/webp"><!-- если браузер поддерживает то выведется webp -->
+					<img src="img/Image.jpg" alt="doggy"><!-- основной контейнер остается img, если браузер не поддерживает  webp то выведется img-->
+					<!-- что бы понять какой формат изображения вывелся, надо  открыть инструмет разработчика в хроме и перейти на Network -->
+				</picture>
+				<!-- ------------------------------------------------------------------ -->
+				<!-- Вариант с фоном background -->
+
+				<!-- <div class="perspiciatis">
+					<div class="perspiciatis__item perspiciatis__item_1">
+						<div class="perspiciatis__title">24/7 Love & Care</div>
+						<div class="perspiciatis__text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium corrupti quos dolores et quas.</div>
+					</div>
+					<div class="perspiciatis__item perspiciatis__item_2">
+						<div class="perspiciatis__title">On-site Veterinarian</div>
+						<div class="perspiciatis__text">Dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.</div>
+					</div>
+					<div class="perspiciatis__item perspiciatis__item_3">
+						<div class="perspiciatis__title">Live-stream Cameras</div>
+						<div class="perspiciatis__text">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur illum.</div>
+					</div>
+				</div> -->
+
+
+				<!-- Вариант с before  -->
+
+				<!-- <div class="perspiciatis">
+					<div class="perspiciatis__item perspiciatis__item_1">
+						<div class="perspiciatis__icon"></div>
+						<div class="perspiciatis__body">
+							<div class="perspiciatis__title">24/7 Love & Care</div>
+							<div class="perspiciatis__text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium corrupti quos dolores et quas.</div>
+						</div>
+					</div>
+					<div class="perspiciatis__item perspiciatis__item_2">
+						<div class="perspiciatis__icon"></div>
+						<div class="perspiciatis__body">
+							<div class="perspiciatis__title">On-site Veterinarian</div>
+							<div class="perspiciatis__text">Dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.</div>
+						</div>
+					</div>
+					<div class="perspiciatis__item perspiciatis__item_3">
+						<div class="perspiciatis__icon"></div>
+						<div class="perspiciatis__body">
+							<div class="perspiciatis__title">Live-stream Cameras</div>
+							<div class="perspiciatis__text">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur illum.</div>
+						</div>
+					</div>
+				</div> -->
+
+
+				<!-- Вариант с before #2 + :ntc-child()  -->
+
+				<!-- <div class="perspiciatis">
+					<div class="perspiciatis__item">
+						<div class="perspiciatis__body">
+							<div class="perspiciatis__title">24/7 Love & Care</div>
+							<div class="perspiciatis__text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium corrupti quos dolores et quas.</div>
+						</div>
+					</div>
+					<div class="perspiciatis__item">
+						<div class="perspiciatis__body">
+							<div class="perspiciatis__title">On-site Veterinarian</div>
+							<div class="perspiciatis__text">Dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.</div>
+						</div>
+					</div>
+					<div class="perspiciatis__item">
+						<div class="perspiciatis__body">
+							<div class="perspiciatis__title">Live-stream Cameras</div>
+							<div class="perspiciatis__text">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur illum.</div>
+						</div>
+					</div>
+				</div> -->
+
+
+				<!-- Вариант с img  -->
+
+				<div class="perspiciatis">
+					<div class="perspiciatis__item">
+						<div class="perspiciatis__icon">
+							<img src="img/test/01.svg" alt="">
+						</div>
+						<div class="perspiciatis__body">
+							<div class="perspiciatis__title">24/7 Love & Care</div>
+							<div class="perspiciatis__text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium corrupti quos dolores et quas.</div>
+						</div>
+					</div>
+					<div class="perspiciatis__item">
+						<div class="perspiciatis__icon">
+							<img src="img/test/02.svg" alt="">
+						</div>
+						<div class="perspiciatis__body">
+							<div class="perspiciatis__title">On-site Veterinarian</div>
+							<div class="perspiciatis__text">Dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.</div>
+						</div>
+					</div>
+					<div class="perspiciatis__item">
+						<div class="perspiciatis__icon">
+							<img src="img/test/03.svg" alt="">
+						</div>
+						<div class="perspiciatis__body">
+							<div class="perspiciatis__title">Live-stream Cameras</div>
+							<div class="perspiciatis__text">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur illum.</div>
+						</div>
+					</div>
+				</div>
+
+
+			</main>
+			<footer hidden class="footer"></footer>
+		</div>
+	</body>
+</html>

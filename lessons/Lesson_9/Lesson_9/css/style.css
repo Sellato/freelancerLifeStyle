@@ -1,0 +1,346 @@
+/* УРОК №9 
+https://youtu.be/oFqzu3IPamo 
+*/
+
+/* 
+&display=swap
+&subset=cyrillic-ext 
+*/
+
+/* ОБНУЛЕНИЕ СТИЛЕЙ */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+li {
+	list-style: none;
+}
+a,
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+img {
+	vertical-align: top;
+}
+html,
+body {
+	height: 100%;
+}
+html {
+	font-size: 16px; /* по умолчанию */
+}
+body {
+	line-height: 1;
+	/* color: #000; */
+	/* font-family:""; */
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	padding: 50px;
+}
+/* ------------------------------ */
+/* Изображения */
+
+/* 
+-какие категории изображений существуют в дизайне
+	- контентные изображения 
+	- декор
+	- иконки
+-формат изображений:
+    -jpg
+    -png
+    -gif
+    -svg 
+    -webp
+    -icon
+- технологии создания изображения
+	- векторный формат
+	- растровый формат
+
+Графика
+Существуют 2 основных типа графики: растровая и векторная графика. 
+	- растровая состоит из пикселей, и соответственно когда оно масштабируется, то теряет свое качество. Растровые изображения это jpg, png, gif и webp.
+	- векторная . svg формат вообще никак не теряет в качестве во время масштабирования. Это векторный формат, он реализован с помощью направляющих линий, а не пикселей, по этому его масштабирование 
+	или открытие на каком то супер разришении не влияет на его качество. Когда мы на макете опридили что это векторное изображение то мы выгружаем его в формат svg.
+	jpg - растровый формат
+Когда у нас картинка растровая -  фотография, мы должны ее выгружать в формате jpg, потому что jpg лучше всего поддается сжатию. Одним из главных целей верстки это скорость загрузки, 
+на скорость загрузки влияет вес нашей страницы. А самое тяжелое в вэбстранице это, как правило, изображение.
+ Растровый формат нельзя выгружать в формате svg.
+ png - растровый формат
+  Позволяет нам выгружать изображение с прозрачностью. png меньше подвержен сжатию и он весит больше чем jpg.
+
+Категории изображений:
+	- контентные изображения - те изображения(jpg, png, gif, webp) , которые скорее всего могут быть заменены, которые являются частью контента. Контентные изображения - мы в html сделаем 
+		с помощью тега <img> (из какого вордпреса эту картинку потом может быть поменяют).
+  	- декор - не реализуется с помощью тега <img>, врядли его будут менят. Декор можно реализовать с помощью псевдоэлементов.
+	- иконки - как правило, не самодостаточный объект, то есть иконка обычно сопровождает текст или группу текстов(есть такой прием в дизайне - усиление восприятия - когда 
+	мы иконкой подчеркиваем текст(визуализируем текст) тогда воспринимать это намного проще, особенно при беглом просмотре).
+	Иконки чаще всего реализуются с помощью векторной графики, и выгружать стоит в svg. 
+	
+Иконку делать через background или через тег <img>? Смотреть с 1:11:00
+	https://www.youtube.com/watch?v=oFqzu3IPamo 
+	Если иконку будут через админку менять не так часто или вменяемо часто - по этому эта иконка декор и ее можно реализовывать через background или псевдоэлемент.
+*/
+/* 
+С чего состоит svg смотреть с 52:30
+https://www.youtube.com/watch?v=oFqzu3IPamo 
+
+--------------------------------------------------------------
+webp - это гугловский формат изображения. Он хороший тем что заменяет весь растровый формат(jpg, png, gif), потому что webp поддерживает прозрачность как png, поддерживает анимацию как gif,
+меньше по весу чем jpg.
+webp оптимизирует изображение без потери качества.
+webp поддерживается практически всеми браузерами.
+Есть конструкции которые нам позволяют безопасно использовать webp не опосаясь за то что какой то браузер не будет поддерживать, хотя по статистика сайта can i use мы особо об этом можем не париться.
+--------------------------------------------------------------
+*/
+/*
+=========================================================================
+Задача №1 (задача высоты)
+Как принять решение по поводу нижнего отступа по последнему элементу в карточке, что бы карточка сохраняла высоту 206px.
+Тест в карточке имеет разное количество строк.
+Решение:*/
+/* (Как правило такие вещи решаются с помощью флексов, гридов) 
+Но решим без них.*/
+.items {
+	display: flex; /*  и это только решится этим */
+	margin: 0px 0px 50px 0px;
+}
+.item {
+	background-color: rgb(227, 71, 71);
+	padding: 30px;
+	color: #fff;
+	width: 33.333%;
+	margin: 0px 20px 0px 0px;
+}
+/* ========================================================================= */
+
+.block {
+	background: url("../img/image_1.jpg") center / cover no-repeat;
+	color: #fff;
+	padding: 100px 50px;
+}
+.block > *:not(:last-child) {
+	margin: 0px 0px 30px 0px;
+}
+.block__title {
+	font-size: 50px;
+	line-height: 1.2;
+}
+.block__sub-title {
+	font-size: 30px;
+}
+.block__text {
+	padding: 0px 20px;
+	line-height: 1.2;
+}
+.block__button {
+	display: inline-block;
+	color: #fff;
+	font-size: 12px;
+	text-transform: uppercase;
+	line-height: 48px;
+	padding: 0px 50px 0px 20px;
+	background: #c40b0b url("../img/button.png") right / auto 100% no-repeat;
+}
+
+.items {
+}
+.item {
+	background-color: #7a956b;
+	padding: 30px;
+	color: #fff;
+	width: 33.333%;
+	margin: 0px 20px 0px 0px;
+}
+
+/* Вариант с фоном background */
+/* 
+
+ */
+
+/* Вариант с before */
+/* 
+.perspiciatis {
+	font-size: 0;
+}
+.perspiciatis__item {
+	display: inline-block;
+	width: 365px.perspiciatis {
+	font-size: 0;
+}
+.perspiciatis__item {
+	display: inline-block;
+	width: 33.333%;
+	vertical-align: top;
+	padding: 0px 30px 0px 86px;
+}
+
+.perspiciatis__title {
+	color: #f2726f;
+	font-size: 19px;
+	line-height: 1.37;
+	font-weight: 900;
+	margin: 0px 0px 10px 0px;
+}
+.perspiciatis__text {
+	color: #4b4b4b;
+	font-size: 16px;
+	line-height: 1.5;
+	letter-spacing: 0.15px;
+}
+.perspiciatis__item_1 {
+	background: url("../img/test/01.svg") 0 0 no-repeat;
+}
+.perspiciatis__item_2 {
+	background: url("../img/test/02.svg") 0 0 no-repeat;
+}
+.perspiciatis__item_3 {
+	background: url("../img/test/03.svg") 0 0 no-repeat;
+};
+	vertical-align: top;
+	padding: 0px 30px 0px 0px;
+}
+.perspiciatis__title {
+	color: #f2726f;
+	font-size: 19px;
+	line-height: 1.37;
+	font-weight: 900;
+	margin: 0px 0px 10px 0px;
+}
+.perspiciatis__text {
+	color: #4b4b4b;
+	font-size: 16px;
+	line-height: 1.5;
+	letter-spacing: 0.15px;
+}
+.perspiciatis__icon {
+	display: inline-block;
+	width: 86px;
+	height: 63px;
+	vertical-align: top;
+}
+
+.perspiciatis__icon::before {
+	content: "";
+	width: 63px;
+	height: 63px;
+	display: block;
+}
+.perspiciatis__body {
+	width: 235px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.perspiciatis__item_1 .perspiciatis__icon::before {
+	background: url("../img/test/01.svg") 0 0 no-repeat;
+}
+.perspiciatis__item_2 .perspiciatis__icon::before {
+	background: url("../img/test/02.svg") 0 0 no-repeat;
+}
+.perspiciatis__item_3 .perspiciatis__icon::before {
+	background: url("../img/test/03.svg") 0 0 no-repeat;
+}
+ */
+
+/* Вариант с before #2 + :ntc-child() */
+
+/* 
+.perspiciatis {
+	font-size: 0;
+}
+.perspiciatis__item {
+	display: inline-block;
+	width: 390px;
+	vertical-align: top;
+	padding: 0px 30px 0px 0px;
+}
+.perspiciatis__item::before {
+	display: inline-block;
+	width: 86px;
+	height: 63px;
+	content: "";
+	vertical-align: top;
+}
+.perspiciatis__item:nth-child(1)::before {
+	background: url("../img/test/01.svg") 0 0 no-repeat;
+}
+.perspiciatis__item:nth-child(2)::before {
+	background: url("../img/test/02.svg") 0 0 no-repeat;
+}
+.perspiciatis__item:nth-child(3)::before {
+	background: url("../img/test/03.svg") 0 0 no-repeat;
+}
+
+.perspiciatis__title {
+	color: #f2726f;
+	font-size: 19px;
+	line-height: 1.37;
+	font-weight: 900;
+	margin: 0px 0px 10px 0px;
+}
+.perspiciatis__body {
+	width: 235px;
+	display: inline-block;
+	vertical-align: top;
+}
+.perspiciatis__text {
+	color: #4b4b4b;
+	font-size: 16px;
+	line-height: 1.5;
+	letter-spacing: 0.15px;
+}
+ */
+
+/* Вариант с img */
+
+.perspiciatis {
+	font-size: 0;
+}
+.perspiciatis__item {
+	display: inline-block;
+	width: 365px;
+	vertical-align: top;
+	padding: 0px 30px 0px 0px;
+}
+.perspiciatis__title {
+	color: #f2726f;
+	font-size: 19px;
+	line-height: 1.37;
+	font-weight: 900;
+	margin: 0px 0px 10px 0px;
+}
+.perspiciatis__text {
+	color: #4b4b4b;
+	font-size: 16px;
+	line-height: 1.5;
+	letter-spacing: 0.15px;
+}
+.perspiciatis__icon {
+	display: inline-block;
+	width: 86px;
+	vertical-align: top;
+}
+.perspiciatis__body {
+	width: 235px;
+	display: inline-block;
+	vertical-align: top;
+}

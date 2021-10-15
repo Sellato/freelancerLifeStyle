@@ -430,7 +430,7 @@ body {
 	padding: 30px 0 80px;
 	margin: 0px 0px 50px 0px;
 }
-.promise .container *:last-child {
+.promise .container > *:last-child {
 	margin-bottom: 0;
 }
 
@@ -525,7 +525,7 @@ body {
 	margin: 0 auto;
 	margin: 0px 0px 50px 0px;
 }
-.choose .container *:not(:last-child) {
+.choose .container > *:not(:last-child) {
 	margin-bottom: 24px;
 }
 .choose .container {
