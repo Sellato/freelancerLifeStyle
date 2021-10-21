@@ -1,0 +1,483 @@
+<!-- УРОК №10 
+ https://youtu.be/mQzcaM3UNRA 
+-->
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" href="css/style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Lesson 10</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="header"></header>
+			<main class="main">
+
+				<!-- Б.Э.М. -->
+
+				<!-- БЭМ рекомендует каждому объекту задавать класс. БЭМ не рекомендует каскадность(мы обращаемся к чему то внутри чего то). По БЭМ не стоит использовать normalize файлы(это отдельные css файлы которые глобально сбрасывают стили).-->
+
+				<!-- Блок -->
+				<!-- 
+					НЕЗАВИСИМЫЙ(самодостаточный) объект. Независимый потому что мы можем его взять с одного места, переставить в другое и у нас ничего не сломается, потому что блок независимый, он не влияет на окружение.
+					НЕ влияет на окружение (внешние объекты). Соответственно если мы правильно построем такой блок, то мы можем его взять, скопировать и вставить в другом месте. 
+					И поскольку он не зависимый не от чего, и поскольку он не влияет на окружение то этот перенос(клонирование, копирование) не вызовает каких то сдвигов, изломов, изменений.
+					У независимого блока должен быть свой стиль и в этом случае мы этот блок можем перемещать по всему сайту на другие страницы, и он будет всегда выглядить так как нам нужно, вне зависимости от того где он расположен.
+
+					Имя класса БЭМ блока:
+					1) Имя должно соответствовать содержанию либо конструкции. Отвечать на вопрос "Что это?".
+					2) Английский язык (Латиница). Если сайт на русском то мы находим имя класса и переводим его на английский язык.
+					3) Нижний регистр.(обязательно)
+					4) Если слов несколько, разделяем дефисом (-).
+					5) НИКАКОЙ ИЕРАРХИИ!!!
+
+					Блоки нам нужно создавать для того что бы мы могли этот блок переиспользовать.
+					
+					Мы можем вкладывать сколько угодно БЭМ блоков друг в друга, также БЭМ блоки можно вкладывать в БЭМ элементы.
+				 -->
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem molestiae ullam culpa sunt, voluptatum autem facilis nihil neque cumque soluta amet est minima non voluptas error totam quas, illum magni.
+				</p>
+				<div class="block"><!-- эта запись абсолютно  верна с точки зрения методологии БЭМ. -->
+					<div class="who-we-are">
+						Я типа БЭМ блок 8)
+						<!-- НЕ верно (попытка иерархии) -->
+						<div class="who-we-are-text">
+							<!-- Верно -->
+							<div class="some-block"></div>
+						</div>
+					</div>
+				</div>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem molestiae ullam culpa sunt, voluptatum autem facilis nihil neque cumque soluta amet est minima non voluptas error totam quas, illum magni.
+				</p>
+				<div class="who-we-are">
+					Я типа БЭМ блок 8)
+				</div>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem molestiae ullam culpa sunt, voluptatum autem facilis nihil neque cumque soluta amet est minima non voluptas error totam quas, illum magni.
+				</p>
+
+				<!-- В css мы обращаемся к этим всем div по первому уровню, не вкладываем именно в css, то есть мы их записываем как не зависимые объекты, каждого свой какой то стиль, не зависийший от того где он находится  -->
+				<div class="item"><!-- эта запись абсолютно  верна с точки зрения методологии БЭМ. -->
+					<div class="who-we-are"></div>
+					<div class="some-block">
+						<div class="some-block-2"></div>
+					</div>
+				</div>
+				<!-- ------------------------------------------------------ -->
+				<!-- Элемент -->
+				<!-- 
+					ЗАВИСИМЫЙ объект от своего БЭМ блока - мы не можем использовать элемент вне своего родителя (мы не можем вынести этот элемент за пределы нашей комнаты), этот элемент всегда должен находится в комнате, он зависим от этой комнаты.
+					ВСЕГДА находится внутри своего БЭМ блока
+					МОЖЕТ влиять на окружение (внешние объекты) - мы уже можем ставить внешнике отступы и все остальное, потому что этот элемент не может быть использован вне этого блока, 
+					он может находиться только внутри БЭМ блока - он является не зависимым блоком, блок он не должен влиять на окружение, потому что мы захотим его перемещать.
+
+					Имя класса БЭМ элемента:
+					0) Всегда начинается с имени 
+					первого родительского БЭМ блока и отделяется 
+						двумя нижними подчеркиваниями ( __ )
+					1) Имя должно соответствовать 
+						содержанию либо конструкции.
+						Отвечать на вопрос "Что это?"
+					2) Английский язык (Латиница)
+					3) Нижний регистр
+					4) Если слов несколько, разделяем дефисом (-).
+					5) НИКАКОЙ ИЕРАРХИИ!!!
+
+					БЭМ элементы можно вкладывать в другие БЭМ элементы своего БЭМ блока
+				 -->
+
+				<!-- Пример -->
+				<!-- Это БЭМ блок -->
+				<div class="who-we-are">
+					<!-- Это БЭМ элемент -->
+					<h1 class="who-we-are__title">Я заголовок</h1>
+					<!-- Это БЭМ элемент -->
+					<p class="who-we-are__text">
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae mollitia eveniet, laborum perspiciatis beatae distinctio laudantium quos corrupti veniam laboriosam ex deleniti rem, excepturi molestias magni? Eligendi accusamus fugiat aliquid!
+
+						<!-- БЭМ элемент (верно) -->
+						<a href="" class="who-we-are__link"></a>
+
+						<!-- БЭМ элемент (НЕ верно) -->
+						<a href="" class="who-we-are__text__link"></a>
+						<!-- БЭМ элемент (НЕ верно) -->
+						<a href="" class="who-we-are-text__link"></a>
+						<!-- БЭМ элемент (НЕ верно) -->
+						<!-- ПОПЫТКА ИЕРАРХИИ!!!! -->
+						<a href="" class="who-we-are__text-link"></a>
+						<!-- Этот случай самый коварный, потому что по всем кононам здесь нет никакой ошибки, но ментально мы в голове пытаемся создать эту иерархию. То есть внутри одного БЭМ блока элементы могут гулять и в какой то ситуации этот 
+элемент может выйти из текста и разместиться, на пример, под ним и тогда наша иерархия теряет смысл, то есть в каком то смысле  сам элемент в этом плане тоже должен быть не привязан ни к чему кроме своего блока. -->
+						<!-- Это БЭМ блок -->
+						<a href="" class="link">Я ссылка</a><!-- если этот элемент мы хотим переиспользовать еще где-то, тогда мы должны это делать не элементом, а БЭМ блоком. -->
+						<!-- Мы можем вкладывать сколько угодно БЭМ блоков друг в друга, также БЭМ блоки можно вкладывать в БЭМ элементы, и эта ссылка <a href="" class="link">Я ссылка</a> - будет отдельным БЭМ блоком .link, мы 
+						можем эту ссылку вложить в  .who-we-are__text - это не нарушает абсолютно никаких правил блока, потому что блок( <a href="" class="link">Я ссылка</a>) все еще не зависим и мы можем разместить его где угодно. 
+					Соответственно в css он будет стоять просто отдельным  блоком .link  со своими стилями, естественно поп правилам, что б он не влиял на окружение, 
+					и таким образом мы его можем вставлять не только внутрь других блоков, но и внутрь абсолютно чужих других элементов, и это никак не нарушает никакие постулаты  определение блока.-->
+					</p>
+				</div>
+
+				<!-- Пример -->
+				<div class="contacts">
+					<h2 class="contacts__title"></h2>
+					<div class="contacts__text"></div>
+					<div class="about">
+						<!-- БЭМ элемент (верно) -->
+						<p class="about__text"></p>
+						<!-- когда называете элемент, обязательно смотрите кто является его родитель, какой БЭМ блок является родителем и именно это должно быть первым названием -->
+
+						<!-- БЭМ элемент (не верно) -->
+						<p class="contacts__text"></p>
+					</div>
+				</div>
+
+				<!-- Пример -->
+				<!-- БЭМ блок -->
+				<div class="promice">
+					<div class="promice__title"></div>
+					<div class="promice__sub-title"></div>
+					<div class="promice__items"><!-- items - это что то, это какие то объекты -->
+						<div class="item">
+							<!-- любой БЭМ блок  можно вложить в другой БЭМ блок либо  БЭМ элемент, но здесь дальше его элементы должны уже начинаться с его имени -->
+							<div class="item__icon"></div>
+							<div class="item__body">
+								<div class="item__label"></div>
+								<div class="item__text"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="promice">
+					<div class="promice__title"></div>
+					<div class="promice__sub-title"></div>
+					<div class="promice__items">
+						<div class="promice__item">
+							<div class="promice__icon"></div>
+							<div class="promice__body">
+								<div class="promice__label"></div>
+								<div class="promice__text"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Модификатор -->
+
+				<!-- 
+					Позволяет вносить отличия 
+					для БЭМ блока либо БЭМ элемента
+
+					Имя класса БЭМ элемента:
+					0) Добавляется как еще один класс
+					для БЭМ блока или БЭМ элемента.
+					Начинается с полного имени БЭМ блока или БЭМ элемента и отделяется 
+						одним нижними подчеркиванием (_)
+					1) Имя должно соответствовать 
+						вносимым модификациям. Отвечать на вопрос "какой? что изменяем? что именно мы модифицируем?"
+					2) Английский язык (Латиница)
+					3) Нижний регистр
+					4) Если слов несколько, разделяем дефисом (-).
+					5) НИКАКОЙ ИЕРАРХИИ!!!
+				 -->
+
+				<div class="who-we-are">
+					Вот он я - who-we-are
+					<div class="who-we-are__title">
+						Я заголовок
+					</div>
+					<div class="who-we-are__text">
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias doloribus, officia incidunt architecto aut magnam repellendus similique veniam amet suscipit ratione blanditiis praesentium! Hic autem consequuntur, ducimus voluptate eaque ab.
+					</div>
+				</div>
+				<!-- Элементу мы пишем основные свойства, а модификатор служит для мелких изменений, для мелких отличий. -->
+				<div class="who-we-are who-we-are_purple"><!-- обычно модификатор предусматривает не большие изменения, совсем чуть чуть. Если блок очень сильно отличается то тогда следует просто создать новый блок  и задать ему новые его стили.-->
+					Вот он я - who-we-are (но не совсем)
+					<!-- Верно -->
+					<div class="who-we-are__title who-we-are__title_margin-font">
+						Я заголовок (но не совсем такой же)
+					</div>
+					<!-- НЕ верно -->
+					<div class="who-we-are__title who-we-are__margin-font">
+						Я заголовок (но не совсем такой же)
+					</div>
+					<div class="who-we-are__text">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita laboriosam autem quod atque facilis, reprehenderit magni id, adipisci a repellendus sit quisquam accusamus harum nihil quo voluptas soluta repudiandae minus.
+					</div>
+				</div>
+
+				<!-- Здесь не совсем верно, сами названия особенно модификаторов вы должны понимать, что бы код был читабельным. При чтении таких классов мы не можем догадаться что там меняется.  
+					Разве что таким образом делать числовые можне если мы выделяем колонки которые мы изменяем-->
+				<div class="who-we-are__title who-we-are_1">
+					Я заголовок (но не совсем такой же)
+				</div>
+
+				<!-- Микс -->
+
+				<!-- 
+					Смесь БЭМ блока и БЭМ элемента 
+					для одного объекта.
+					При этом БЭМ элемент может
+					выступать в роли БЭМ модификатора
+				 -->
+				<!-- Как задать блоку отступ? Нашему блоку who-we-are мы можем задать модификатор кот. будет принадлежать родительскому блоку.  -->
+				<div class="who-we-are"> не зависимый отдельный блок кот. живет своей жизнью.
+					Я типа БЭМ блок 8)
+				</div>
+
+				<div class="main-page">
+					<!-- Сейчас этот объект является одновременно  и БЭМ блок и БЭМ элемент -->
+					<div class="who-we-are main-page__who-we-are"><!-- и в какой то из этих ситуаций нам нужно задавать margin этого блока, что мы делать для блока не сможем. И тут в роль вступает микс.  -->
+						<!-- 
+							То есть мы берем наш who-we-are и делаем из него элемент блока кот. он пренадлежит - main-page__who-we-are. Сейчас этот объект является одновременно и БЭМ блок и БЭМ элемент. 
+						БЭМ элемент может выступать в роли модификатора, а еще может выступать в  роли волшебной палочки кот. позволяет нам задавать тот же внешний отступ, то есть влияет на окружение, потому что это элемент,
+					а элементу позволено влиять на окружение.
+				-->
+						Я типа БЭМ блок 8) Я еще и элемент main-page
+					</div>
+				</div>
+
+				<div class="contacts">
+					<!-- Блоку who-we-are мы не в коем случае не имеем право задавать отступы, но в ситуации когда этот блок находится внутри страницы либо другого блока contacts, 
+						мы можем его сделать элементом этого блока, и поскольку это элемент - задать ему отступ -->
+					<div class="who-we-are contacts__who-we-are"><!-- Соответственно какой то другой странице этот же блок  who-we-are может быть и элементом своего блока contacts -->
+						<!-- модификатор нам тут применять не нужно, потому что мы все эти изменения можем внести как раз по элементу contacts__who-we-are -->
+						Я типа БЭМ блок 8) Я еще и элемент main-page
+					</div>
+				</div>
+				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam, sapiente adipisci, doloremque mollitia quidem ipsum doloribus optio explicabo obcaecati ab vitae. Excepturi debitis minus facere alias amet iusto quibusdam illum?
+
+
+				<div class="who-we-are">
+					<div class="who-we-are__header header-item"><!-- сам блок header-item остается не зависимым, он не влияет на окружение, но с помощью микса who-we-are__header, 
+						с помощью того что этот блок в той или иной ситуации является еще и элементом того или иного родителя(БЭМ блока), мы можем по разному на него влиять стилями, в том числе стилями запрещенными для самого блока. -->
+						<div class="header-item__title"></div>
+						<div class="header-item__sub-title"></div>
+					</div>
+				</div>
+
+
+				<div class="promice">
+					<div class="promice__header header-item">
+						<div class="header-item__title"></div>
+						<div class="header-item__sub-title"></div>
+					</div>
+					<div class="promice__icon"></div>
+					<div class="promice__items">
+						<!-- НЕ верно (попытка иерархии) -->
+						<div class="promice__item promice-item">
+
+							<!-- НЕ верно (попытка иерархии) -->
+							<div class="promice__body-title"></div>
+							<div class="promice__body-text"></div>
+
+						</div>
+						<!-- верно -->
+						<div class="promice__item item-promice"><!-- и тут мы создаем отдельный блок item-promice, не потому что мы хотим его где то еще использовать, но для того что бы высвободить имена, которые мы уже задавали. Мы просто переварачиваем это имя promice__item что бы не было иерархии -->
+							<!-- и дальше мы высвобождаем все имена 
+							Высвобождаются имена - это означает что когда то раньше где то выше мы уже использовали  promice__icon,  и если бы мы не перескачили на отдельный блок то здесь   promice__icon мы бы не смогли использовать потому что это такой же класс. -->
+							<div class="item-promice__icon"></div>
+							<div class="item-promice__body">
+								<div class="item-promice__title"></div>
+								<div class="item-promice__text"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+				<!-- Верно не верно -->
+				<div class="some-block">
+					<!-- НЕ верно (попытка иерархии) -->
+					<a href="" class="some-block-link"></a>
+				</div>
+
+				<!-- ------------ -->
+
+				<div class="some-block">
+					<div class="some-block__title">
+						<!-- Верно -->
+						<a href="" class="link"></a>
+					</div>
+				</div>
+
+				<!-- ------------ -->
+
+				<div class="some-block">
+					<div class="some-block__title"></div>
+					<div class="some-block__text">
+						<div class="item">
+							<!-- НЕ верно, элемент НЕ своего блока -->
+							<a href="" class="some-block__link"></a>
+						</div>
+						<div class="item">
+							<!-- верно -->
+							<a href="" class="item__link"></a>
+						</div>
+					</div>
+				</div>
+
+				<!-- ------------ -->
+
+				<div class="some-block">
+					<div class="some-block__title"></div>
+					<a href="" class="link"></a>
+				</div>
+				<!-- НЕ верно, элемент НЕ своего блока -->
+				<div class="some-block__text"></div>
+
+				<!-- ------------ -->
+
+				<div class="some-block">
+					<!-- верно, это микс' -->
+					<a href="" class="some-block__link link"></a><!-- ссылка является элементом блока some-block и в тоже время она является блоком и может быть использована где нибудь в другом месте без элемента, или с другим элементом.-->
+				</div>
+
+				<!-- ------------ -->
+
+				<!-- верно -->
+				<div class="some-block"><!-- у нас есть блок  -->
+					<div class="some-block__items"><!-- у блока есть элемент items -->
+						<div class="some-block__item item-some-block"><!-- у  блока some-block__item есть элемент item который является одновременно и отдельным блоком item-some-block -->
+							<div class="item-some-block__title"></div>
+							<div class="item-some-block__text"></div>
+							<div class="block-items"><!-- есть еще один блок со своими элементами -->
+								<div class="block-items__title"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- ------------ -->
+
+				<div class="some-block">
+					<div class="some-block__text"></div>
+					<!-- НЕ верно (попытка иерархии) -->
+					<div class="some-block__body some-block-body">
+						<div class="some-block-body__title"></div>
+						<div class="some-block-body__text"></div>
+					</div>
+				</div>
+
+				<!-- ------------ -->
+
+				<div class="some-block">
+					<div class="some-block__text"></div>
+					<!-- 
+						НЕ верно записан модификатор! 
+						нет объекта модификации
+						нет ответа на вопросы "какой?", "что изменяет?"
+					-->
+					<a href="" class="some-block_link"></a><!-- модификатор записан без элемента (но some-block_link это не модификатор). По правилам модификатор не может расти сам по себе, он является вторым дополнительным классом для блока либо для элемента. -->
+				</div>
+
+				<!-- ------------ -->
+
+				<div class="block">
+					<div class="block__title">Я заголовок</div>
+					<div class="block__text">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur eveniet accusamus deleniti autem aspernatur aliquam animi debitis error possimus, voluptatibus minima maxime quaerat beatae fuga illum tempora sed porro hic.
+					</div>
+					<div class="block">
+						<div class="block__title">Я заголовок</div>
+						<div class="block__text">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur eveniet accusamus deleniti autem aspernatur aliquam animi debitis error possimus, voluptatibus minima maxime quaerat beatae fuga illum tempora sed porro hic.
+						</div>
+						<div class="block">
+							<div class="block__title">Я заголовок</div>
+							<div class="block__text">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur eveniet accusamus deleniti autem aspernatur aliquam animi debitis error possimus, voluptatibus minima maxime quaerat beatae fuga illum tempora sed porro hic.
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<ul class="list">
+					<li class="list__item"></li>
+					<li class="list__item">
+						<ul class="list">
+							<li class="list__item"></li>
+							<li class="list__item"></li>
+							<li class="list__item"></li>
+							<li class="list__item"></li>
+						</ul>
+					</li>
+					<li class="list__item"></li>
+					<li class="list__item"></li>
+				</ul>
+
+
+
+				<div class="contacts">
+					<div class="page">
+						<div class="page__title">
+							Я заголовок
+						</div>
+						<div class="page__text">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt fugiat inventore officiis ipsum cumque? At officia amet voluptatibus? Delectus praesentium accusamus sapiente, magnam laborum distinctio nesciunt numquam molestias odit placeat.
+						</div>
+					</div>
+				</div>
+				<div class="about">
+					<div class="advantages">
+						<div class="advantages__text">123</div>
+					</div>
+				</div>
+				<!-- ------------------------------------------------------ -->
+				<div class="about _container"><!-- _container - это технический класс,  мы его используем так где нам нужно, но в иерархии  БЭМ он не участвует, он технический, просто выдуманный. _container  это надстройка над БЭМ-->
+					<div class="about__title"></div>
+					<div class="about__text"></div>
+				</div>
+				<!-- ------------------------------------------------------ -->
+				<!-- Пример -->
+
+				<!--1) Попытка иерархии -->
+				<div class="service">
+					<div class="service__cards service-card"><!-- мы пытаемся где то подсознательно привязать этот блок service-card к service, хотя блок является не зависимым объектом, мы можем взять этот service-card с его элементами и перенести в другой блок и это название потеряет смысл. -->
+						<div class="service-card__title"></div>
+						<div class="service-card__image"></div>
+						<div class="service-card__text"></div>
+						<!--1) Попытка иерархии это когда мы подсознательно пытаетесь в имени класса привязаться к родительскому блоку. Надо помнить что блок есть независимый объект, он не должен зависить даже в названии-->
+					</div>
+				</div>
+				<!--2) Делаем микс - переворачиваем Это правильный вариант-->
+				<div class="service">
+					<div class="service__cards card-service"><!-- в данном случае у нас уже нет привязки к какому то родителскому блоку, даже подсознательно, это отдельный блок, кот. называется card-service. Лучше всего переворачивать. -->
+						<div class="card-service__title"></div>
+						<div class="card-service__image"></div>
+						<div class="card-service__text"></div>
+					</div>
+				</div>
+				<!--3) не вариает-->
+				<div class="service">
+					<div class="service__cards servicecard"><!-- тут не вариант, потому что по методологии БЭМ слова у нас разделяются дефисом.  -->
+						<div class="servicecard__title"></div>
+						<div class="servicecard__image"></div>
+						<div class="servicecard__text"></div>
+					</div>
+				</div>
+				<!--4) здесь тоже самое как и выше -->
+				<div class="service">
+					<div class="service__cards cardservice">
+						<div class="cardservice__title"></div>
+						<div class="cardservice__image"></div>
+						<div class="cardservice__text"></div>
+					</div>
+				</div>
+				<!-- ------------------------------------------------------ -->
+				<div class="main">
+					<div class="main__block block"></div><!-- в этой ситуации мы можем задавать все что угодно по этому классу main__block - этот класс является элементом. <div class="main__block block"></div> этот 
+	объект является одновременно и элементом блока main и отдельным блоком block. Все запрещенные для блока block стили мы можем задавать элементу класса main__block. -->
+				</div>
+
+			</main>
+			<footer hidden class="footer">
+				<a href="" class="link">Я ссылка</a>
+			</footer>
+		</div>
+	</body>
+</html>

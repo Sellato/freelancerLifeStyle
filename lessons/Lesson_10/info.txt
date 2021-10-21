@@ -1,0 +1,8 @@
+ДОМАШКА №10:
+1) Верстаем минимум один блок (http://joxi.ru/eAOxq6aT6ZlaJr) по БЭМ методологии.
+Доп. материал по БЭМ:
+1) Сайт https://ru.bem.info/methodology/
+2) Урок на канале: https://www.youtube.com/watch?v=HihYQVuH64U&list=PLM6XATa8CAG4F9nAIYNS5oAiPotxwLFIr&index=17
+
+Дополнительно. Информация по следующей теме:
+https://www.youtube.com/watch?v=mpykT40_VBc&list=PLM6XATa8CAG4F9nAIYNS5oAiPotxwLFIr&index=15
