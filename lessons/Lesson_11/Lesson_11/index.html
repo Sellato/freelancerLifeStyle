@@ -1,0 +1,133 @@
+<!-- УРОК №11 
+https://youtu.be/TO9dU609mxE 
+-->
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" href="css/style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Lesson 11</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<!-- ----------------------- пример 2 ------------------------- -->
+			<header class="header">Я шапка</header>
+			<!-- -------------------------------------------------------------------- -->
+			<main class="main">
+				<!-- Позиционирование -->
+
+
+				<!-- <div class="block">
+					<div class="block__item block__item_color-brown">Я блок №1</div>
+					<div class="block__item block__item_color-purple"><span>Я блок №2</span></div>
+					<div class="block__item block__item_color-green">Я блок №3</div> -->
+				<!-- Уже в момент когда мы объект переключили в position: relative; то для него начал действовать уже z-index иначе - (z-index свойство кот. по умолчанию имеет значение auto), 
+						в момент когда мы переключаем тумблер со static на relative - этот блок становится более значимым на оси z, свойство z-index управляет положением объекта на оси z. И поскольку z-index для объектов у которых указан position: static; этот
+						z-index вообще не включен, не работает, то когда мы переключаем на position: relative; , z-index включается, по умолчанию у него значение auto и этот объект становится более значимым. 
+						Когда у нас все объекты статичны - мы один на другой накладываем 	<div class="block__item block__item_color-brown">Я блок №1</div>, то они все равны, у них нет z-index. 
+						А при position: static; положение в html будет играть роль, то есть мы видим что следующий блок будет надвинут на предыдущий, это зависит от положения объекта в коде - чем ниже объект в коде, тем он будет более сверху.  
+						А при position: relative;  один из объектов отличается от вдух остальных и у него выше приоритет по оси z и 	<div class="block__item block__item_color-brown">Я блок №1</div> теперь над всеми блоками. 
+						Если задать каждому объекту block__item position: relative;  то мы увидим тоже самое практически что и  без position: relative; - то есть каждый нижний блок будет надвинут на предыдущий но с одним отличием - теперь и текст будет задвинут как и блок.
+						В этой ситуации у нас все 3 блока одинаковые - они все position: relative; у них у всех z-index: auto; и в этой ситуации включается порядок в html - чем ниже блок, тем он будет выше по оси z-->
+				<!-- </div> -->
+				<div class="block-2">
+					<div class="block__item-2 block__item_color-brown-2">Я блок №1</div>
+					<div class="block__item-2 block__item_color-purple-2"><span>Я блок №2</span></div>
+					<div class="block__item-2 block__item_color-green-2">Я блок №3</div>
+				</div>
+
+
+				<!-- ----------------------- пример 1 ------------------------- -->
+				<ul class="list">
+					<li class="list__item">
+						Lorem ipsum dolor sit amet.
+					</li>
+					<li class="list__item">
+						Lorem ipsum dolor sit amet.
+						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur tempore rem unde, impedit magnam odit laboriosam non dolorem maxime laudantium ipsam voluptate saepe molestiae nostrum, cum architecto ut veritatis fuga!
+					</li>
+					<li class="list__item">
+						Lorem ipsum dolor sit amet.
+					</li>
+					<li class="list__item">
+						Lorem ipsum dolor sit amet.
+					</li>
+				</ul>
+				<!-- -------------------------------------------------------------------- -->
+				<!-- ----------------------- пример 3 ------------------------- -->
+				<!-- <a href="" class="image">
+					<img class="image__item" src="img/01.png" alt="Картинка">
+				</a> -->
+
+				<!-- ----------------------- пример 4 ------------------------- -->
+				<div class="test">
+					<div class="test__content">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio totam illo, obcaecati reiciendis reprehenderit ea itaque soluta, repudiandae veniam, quasi laboriosam vero enim provident ut amet aut nemo consequatur illum!
+					</div>
+				</div>
+			</main>
+			<footer class="footer"></footer>
+		</div>
+	</body>
+</html>
