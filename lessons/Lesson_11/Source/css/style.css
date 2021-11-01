@@ -307,17 +307,7 @@ body {
 	position: relative;
 	padding: 0px 0px 210px 0px;
 }
-.nemo::before {
-	content: "";
-	display: block;
-	position: absolute;
-	width: 201px;
-	height: 317px;
-	top: -107px;
-	right: 374px;
-	background: url("../img/circles.png") 0 0 no-repeat;
-	z-index: 1;
-}
+
 .nemo__container {
 	position: relative;
 	border: 1px solid transparent;
@@ -326,6 +316,7 @@ body {
 	padding: 100px 86px 0px 86px;
 	margin-top: -80px;
 }
+
 .nemo__container::before {
 	position: absolute;
 	content: "";
@@ -335,6 +326,17 @@ body {
 	width: 612px;
 	height: 670px;
 	background: url("../img/blob.png") 0 0 no-repeat;
+	z-index: 1;
+}
+.nemo__container::after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 201px;
+	height: 317px;
+	top: -110px;
+	right: -77px;
+	background: url("../img/circles.png") 0 0 no-repeat;
 	z-index: 1;
 }
 .nemo__header {
