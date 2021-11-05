@@ -1,0 +1,9 @@
+ДОМАШКА №13:
+1) Анимируем автомобили!
+Доп. материалы:
+1) Шпаргалки:
+https://fls.guru/csstransition.html
+https://fls.guru/cssanimation.html
+2) Видео:
+https://www.youtube.com/watch?v=yZFg3cuq_LU&list=PLM6XATa8CAG4F9nAIYNS5oAiPotxwLFIr&index=24
+https://www.youtube.com/watch?v=GKgOOuTL0po&list=PLM6XATa8CAG4F9nAIYNS5oAiPotxwLFIr&index=25

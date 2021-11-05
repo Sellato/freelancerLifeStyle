@@ -1,0 +1,410 @@
+/* УРОК №13 
+https://youtu.be/VNSTQePb1nI 
+ */
+/* 
+&display=swap
+&subset=cyrillic-ext 
+*/
+
+/* ОБНУЛЕНИЕ СТИЛЕЙ */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+li {
+	list-style: none;
+}
+a,
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+img {
+	vertical-align: top;
+}
+html,
+body {
+	height: 100%;
+}
+html {
+	font-size: 16px; /* по умолчанию */
+}
+body {
+	line-height: 1;
+	/* color: #000; */
+	/* font-family:""; */
+	overflow-x: hidden;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	background-color: #333;
+}
+.wrapper {
+	min-height: 100%;
+	padding: 30px;
+}
+/* ------------------------------ */
+/* Анимация */
+/*
+CSS – переходы либо CSS – transitions могут применяться ко всем элементам и даже к псевдоэлементам. 
+Используются для оживления нашей верстки. Что в свою очередь приводит к улучшению взаимодействия с пользователем, как правило 
+путем приятной анимированной реакции на его действия. Например – наведение и нажатие на кнопку. Также свойства transition можно использовать для построения несложных 
+сценариев анимации. Фактически, CSS – переходы обеспечивают смену значений других свойств с определенной анимацей и сценарием. 
+Всю эту магию можно описать универсальным CSS свойcтвом transition, либо рядом следующих отдельных свойств: 
+*/
+
+.link {
+	color: yellow;
+	font-size: 14px;
+}
+.link:hover {
+	color: red;
+	font-size: 20px;
+}
+.link_anim {
+	/*
+	Плавный переход.
+	Определяет промежуток времени, в течение которого должен осуществляться переход. 
+	Собственно – тут мы указываем время за которое одно значение свойства по переходит (анимируется) в другое. Свойство не наследуется.
+	*/
+	/* transition-duration: 2s; =  transition-duration: 2000ms;*/
+	/* transition-duration: 0.2s; =  transition-duration: 200ms;*/
+	/* transition-duration: 0.2s; - это микроанимация, это дает нам еле ощутимую плавность, то есть когда мы хотим сделать интерфейс приятным, удобно им пользоваться, но пользователь даже этого не замечает фактически. */
+	/* Плавный переход работает не для всех свойств - свойства которые меняют тип объекта, они не анимируются. Это, на пример, с display:block; на display:none; анимироваться не будет, будет просто исчезать. Так же и visibility.
+	А opasity будет анимироваться.
+
+	Обычно анимируются все те свойства у которых есть пиксельное значение, цветовое.*/
+	/* ------------------------------------------------------------------------------------------------------------------------------ */
+	/*
+	Содержит название CSS-свойств, к которым будет применен эффект перехода. 
+	Значение свойства может содержать как одно свойство, так и список свойств через запятую. 
+	Свойство не наследуется.	
+	*/
+	/* transition-property: color; */
+	/* transition-property: all; по умолчанию*/
+	/*
+	Пример --------------------
+	transition-property: color, font-size;
+	transition-duration: 0.2s,1.2s; мы можем указывать разное время для разных свойств. Теперь у нас цвет будет изменен за 0,2 секунды, а вот размер шрифта за 1 секунду и 2 милисекунд.
+	  ------------------------------------------------------------------------------------------------------------------------------ 
+	Задержка выполнения перехода. Позволяет сделать так, чтобы изменение свойства происходило не моментально, а с некоторой задержкой. 
+	Время задержки перехода указывается в секундах или миллисекундах. Свойство не наследуется.
+	*/
+	/* transition-delay: 0s; */
+
+	/* transition-property: color, font-size; */
+	/* transition-delay: 0s, 0.5s; */
+
+	/* ------------------------------------------------------------------------------------------------------------------------------  */
+	/*
+	Задаёт стиль нашего перехода, то есть некий сценарий, по которому будет осуществятся анимация.
+	*/
+	/* transition-timing-function - это функция или кривая линия по которой собственно происходит анимация */
+	/*
+	ease - Переход начинается медленно, разгоняется быстро и замедляется в конце. 
+	*/
+	/* transition-timing-function: ease; по умолчанию. Начинается медленно, потом немного ускоряется.*/
+	/* transition-timing-function: steps(2, start); - он берет и разбивает нашу анимацию на этапы. В первом значении мы указываем сколько этапов, во втором мы указываем в какой момент времени должен начаться этап. */
+	/* transition-timing-function: cubic-bezier(.29, 1.01, 1, -0.68); */
+	/* ------------------------------------------------------------------- */
+	/* 
+	https://makingcss.com/transition
+	 */
+	/* Универсальное свойство */
+	/* transition: 0.3s;
+
+	transition: font-size 1s ease 0.5s, color 5s ease-out 0s;
+	*/
+	/* 
+	Порядок значений:
+	property duration timing-function delay 
+	transition: all 0.3s ease 0s;
+	*/
+}
+/*--------------------------------------------------------------------
+.button {
+	display: inline-block;
+	color: #fff;
+	background-color: green;
+	border-radius: 10px;
+	padding: 10px 15px;
+	box-shadow: 0 5px 0px rgba(0, 0, 0, 0.3);
+	transition: all 0.3s ease 0s;
+}
+.button:hover {
+	transform: translate(0px, 3px);
+	box-shadow: 0 2px 0px rgba(0, 0, 0, 0.3);
+}
+--------------------------------------------------------------------
+*/
+/*
+ c 1:00:00 https://youtu.be/VNSTQePb1nI 
+Задача - при наведении на меню мы должны вернуть наш .menu__list 
+.menu {
+	overflow: hidden; что б скрыть оболочку .menu__list 
+	background-color: rgba(255, 255, 255, 0.05);
+}
+.menu:hover .menu__list {
+	transform: translateX(0);
+	transition-delay: 0s;
+}
+
+.menu:hover .menu__item { мы должны прослушивать родителя, по этому мы слушаем наведение меню, и в этом состоянии мы будем обращаться к дочернему элементу.menu__list  и возращать его домой
+	transform: translateX(0);
+}
+
+.menu__list {
+	background-color: green;
+	padding: 15px;
+	убрали с виду .menu__list
+	transform: translateX(-100%); работает от ширины самого объекта
+	transition: 0.3s;
+	transition-delay: 0.8s;
+}
+.menu__item {
+	transform: translateX(-100%);
+	transition-duration: 0.6s;
+}
+.menu__item:nth-child(1) {
+	transition-delay: 0s;
+}
+.menu__item:nth-child(2) {
+	transition-delay: 0.2s;
+}
+.menu__item:nth-child(3) {
+	transition-delay: 0.4s;
+}
+.menu__item:nth-child(4) {
+	transition-delay: 0.6s;
+}
+.menu__item:not(:last-child) {
+	margin: 0px 0px 10px 0px;
+}
+.menu__link {
+	color: #fff;
+}
+--------------------------------------------------------------------
+*/
+
+/* ================================================================== */
+
+/*
+Как и CSS свойство плавных переходов transition, о котором мы говорили в предыдущем уроке, свойство animation призвано сделать нашу верстку более динамичной, 
+оживить её для лучшего взаимодействия с пользователем и создания WOW эффекта.
+
+Но в отличие от CSS переходов, создание анимации базируется на ключевых кадрах @keyframes, которые позволяют автоматически воспроизводить 
+и повторять эффекты на протяжении заданного времени, а также приостанавливать анимацию по определенному событию.
+
+Другими словами, использование конструкции animation и @keyframes позволяет нам создавать более сложные сценарии анимаций.
+*/
+
+.block {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	background-color: #7a956b;
+
+	/*
+	Определяет список применяемых к элементу анимаций (ключевых кадров). Можно указать через запятую. Причем приоритет у последней записи.
+	*/
+	animation-name: somename;
+	/*
+	---------------------------
+	Отвечает за продолжительность анимации.
+	*/
+	animation-duration: 1s;
+	/*
+		---------------------------
+	Задаёт сценарий развития анимации между ключевыми кадрами.
+	*/
+	animation-timing-function: linear;
+	/*
+		---------------------------
+	Отвечает за задержку перед проигрыванием.
+	*/
+	animation-delay: 0s;
+	/*
+		---------------------------
+	Отвечает за повтор проигрывания ключевых кадров.
+	*/
+	animation-iteration-count: 1; /* сколько проиграется анимация */
+	animation-iteration-count: infinite; /* бесконечная анимация */
+	/*
+		---------------------------
+	Определяет направление и тип проигрывания ключевых кадров.
+	*/
+	animation-direction: normal; /* слева на право */
+	animation-direction: reverse; /* справа на лево */
+	animation-direction: alternate; /* очень хорошо работает с infinite, потому что каждый четный проход будет идти в обратную сторону, и по этому мы получим бесконечное движение - то есть один раз прошел, вернулся, другой раз прошел, вернулся. */
+	/*
+		---------------------------
+	Определяет какие значения анимируемых css свойств применятся к объекту после завершения анимации.
+	*/
+	animation-fill-mode: none;
+	animation-fill-mode: forwards; /* в таком случае объект закончится после прохождния итерации, объект закончится в конечных значениях, то есть в значениях transform: translate(300px, 0px); Мы можем пройти анимацию и там же остаться.*/
+	animation-fill-mode: backwards; /* в таком случае объект закончится в начальном значении, то есть в значениях 	transform: translate(0px, 0px); */
+	/*
+		---------------------------
+	Позволяет запускать или останавливать анимацию по событию.
+	*/
+	animation-play-state: running;
+}
+.block:hover {
+	animation-play-state: paused;
+}
+@keyframes somename {
+	/* линия наших сценариев(изменений) */
+
+	/* начальная точка, мы в нулевой точке прохождения анимации*/
+	0% {
+		/* css свойства */
+		transform: translate(0px, 0px);
+	}
+	50% {
+		background-color: #77608d;
+		border-radius: 50%;
+	}
+	/* конец анимации */
+	100% {
+		/* css свойства */
+		transform: translate(300px, 0px);
+	}
+	/* когда анимация заканчивается, все возращается в нулевую позицию, а именно 	transform: translate(0px, 0px);*/
+}
+/* Месяц 
+https://www.youtube.com/watch?v=VNSTQePb1nI с 2:09:00*/
+.crescent {
+	margin: 0px 0px 50px 0px;
+	border-bottom: 3px solid rgb(43, 43, 43);
+}
+.crescent__body {
+	overflow: hidden;
+	width: 500px;
+	height: 500px;
+	transform-origin: 53.333% 68.666%;
+	animation: crescent-anim 5s 1 ease-out 1s forwards;
+}
+.crescent__item {
+	background-color: #fff;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	position: relative;
+	animation: crescent-init 1s 1 linear forwards;
+}
+.crescent__item::before {
+	background-color: #333;
+	border-radius: 50%;
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	animation: crescent-shadow 1s 1 linear forwards;
+}
+@keyframes crescent-anim {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(20deg);
+	}
+	50% {
+		transform: rotate(10deg);
+	}
+	75% {
+		transform: rotate(20deg);
+	}
+	100% {
+		transform: rotate(15deg);
+	}
+}
+@keyframes crescent-init {
+	0% {
+		transform: translate(-30%, 0px);
+	}
+	100% {
+		transform: rotate(45deg) translate(0px, 0px);
+	}
+}
+@keyframes crescent-shadow {
+	0% {
+		transform: translate(0px, 0px);
+	}
+	100% {
+		transform: translate(-16.666%, 16.666%);
+	}
+}
+
+.clock {
+	border-top: 3px solid rgb(83, 83, 83);
+	height: 500px;
+	max-width: 900px;
+	margin: 0px auto;
+}
+.clock__item {
+	position: relative;
+	width: 1px;
+}
+.clock__item::before {
+	content: "";
+	position: absolute;
+	width: 2px;
+	top: 0;
+	height: 300px;
+	background-color: rgb(83, 83, 83);
+	transform-origin: 0 0;
+}
+.clock__item::after {
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	background-color: #fff;
+	position: absolute;
+	top: 300px;
+	left: 0%;
+	transform: translate(-50%, 0px);
+	content: "";
+}
+.clock__item:nth-child(1) {
+	left: 40%;
+	animation: item-1 1s infinite ease-in-out alternate 0s;
+}
+.clock__item:nth-child(2) {
+	left: 50%;
+}
+.clock__item:nth-child(3) {
+	left: 60%;
+	animation: item-2 1s infinite ease-in-out alternate 0s;
+}
+
+@keyframes item-1 {
+	0% {
+		transform: rotate(45deg);
+	}
+	50% {
+		transform: rotate(0deg);
+	}
+}
+@keyframes item-2 {
+	50% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(-45deg);
+	}
+}

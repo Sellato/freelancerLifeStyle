@@ -1,0 +1,472 @@
+/* 
+&display=swap
+&subset=cyrillic-ext 
+*/
+
+/* ОБНУЛЕНИЕ СТИЛЕЙ */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+li {
+	list-style: none;
+}
+a,
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+img {
+	vertical-align: top;
+}
+html,
+body {
+	height: 100%;
+}
+html {
+	font-size: 16px; /* по умолчанию */
+}
+body {
+	line-height: 1;
+	/* color: #000; */
+	/* font-family:""; */
+	overflow-x: hidden;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	background-color: #7fb09d;
+}
+.wrapper {
+	min-height: 100%;
+	padding: 30px;
+}
+/* ------------------------------ */
+
+/* ------------------------------ */
+.arrow {
+	width: 100%;
+	height: 5px;
+	background-color: #bebec0;
+}
+/* ------------------------------ */
+.shadow {
+	height: 5px;
+	border-radius: 15px;
+	background-color: #87b6a4;
+}
+/* ------------------------------ */
+.wheel {
+	position: relative;
+}
+.wheel__path-one_rad {
+	border-radius: 50%;
+}
+.wheel__path-one {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	border: 12px solid #0b2e4a;
+}
+.wheel__path-two {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 80px;
+	height: 80px;
+	border: 8px solid #163853;
+}
+.wheel__path-three {
+	position: absolute;
+	top: 18px;
+	left: 18px;
+	width: 64px;
+	height: 64px;
+	border: 7px solid #fff;
+}
+.wheel__path-four {
+	position: absolute;
+	top: 25px;
+	left: 25px;
+	width: 50px;
+	height: 50px;
+	border: 2px solid #0a2d4b;
+}
+.wheel__path-five {
+	position: absolute;
+	top: 27px;
+	left: 27px;
+	width: 46px;
+	height: 46px;
+	border: 12px solid #9a999e;
+}
+.wheel__path-six {
+	position: absolute;
+	top: 39px;
+	left: 39px;
+	width: 22px;
+	height: 22px;
+	border: 2px solid #0a2d4b;
+	animation-iteration-count: infinite;
+	animation-name: rotat;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+}
+.wheel__path-seven {
+	position: absolute;
+	top: 41px;
+	left: 41px;
+	width: 18px;
+	height: 18px;
+	background-color: #717380;
+}
+.wheel__spot {
+	position: absolute;
+	z-index: 4;
+	border-radius: 50%;
+	background-color: #fff;
+	width: 10px;
+	height: 10px;
+	transform: translate(20px, 0px);
+}
+.wheel__spot_mod {
+	transform: translate(-12px, 1px);
+}
+.wing {
+	height: 60px;
+	width: 120px;
+	border-top-left-radius: 120px;
+	border-top-right-radius: 120px;
+	background: #0a2d4b;
+}
+.bumper {
+	width: 50px;
+	height: 20px;
+	background-color: #8e8e90;
+	border: 4px solid #0a2e50;
+	border-radius: 5px;
+}
+.lamp {
+	width: 33px;
+	height: 15px;
+	background-color: #b56461;
+	border-radius: 5px;
+	animation: lamp 0.6s infinite;
+}
+/* ------------------------------ */
+.car {
+	padding: 400px 0;
+	animation: shift 0.5s infinite alternate;
+}
+/* ------------------------------ */
+.car__wrapper {
+	position: relative;
+	z-index: 2;
+	transform-origin: bottom left;
+	transition: all 0.3s ease 0s;
+	animation: car 15s;
+	animation-iteration-count: infinite;
+	transform: translate(800px, 0px) scale(0.7);
+}
+
+.car__wrapper:hover {
+	animation-play-state: paused;
+}
+.car__front {
+	position: absolute;
+	top: 0;
+	left: 195px;
+}
+.front__container {
+	position: relative;
+	width: 140px;
+	height: 110px;
+	border: 5px solid #0a2d4b;
+	border-right: none;
+	background: linear-gradient(180deg, rgba(85, 150, 126, 1) 38%, rgba(56, 118, 93, 1) 38%, rgba(50, 109, 85, 1) 79%, rgba(46, 104, 80, 1) 80%);
+}
+.front__path {
+	width: 95px;
+	height: 110%;
+	border-top: 5px solid #0a2d4b;
+	border-bottom: 5px solid #0a2d4b;
+	border-right: 5px solid #0a2d4b;
+	border-radius: 0 35px 7px 0;
+	background: linear-gradient(180deg, rgba(85, 150, 126, 1) 38%, rgba(56, 118, 93, 1) 38%, rgba(50, 109, 85, 1) 79%, rgba(46, 104, 80, 1) 80%);
+	transform: translate(120px, -5px) rotate(0deg) scale(1) skew(-15deg);
+}
+.front__lamp {
+	transform: translate(58px, 34px) rotate(92deg);
+}
+.front__bumper {
+	transform: translate(58px, 55px) rotate(0deg);
+}
+.front__shadow {
+	position: absolute;
+	top: 8%;
+	left: 5%;
+	width: 120%;
+}
+.front__shadow-short {
+	position: absolute;
+	top: 8%;
+	left: 130%;
+	width: 10%;
+	border-radius: 8px;
+}
+.front__wheel {
+	position: absolute;
+	top: 50px;
+	left: 46px;
+}
+.front__wing {
+	transform: translate(35px, -65px);
+}
+.front__arrow,
+.door__arrow,
+.back__arrow {
+	position: absolute;
+	top: 38%;
+	left: 0;
+}
+/* ------------------------------ */
+.car__door {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.door__container {
+	position: relative;
+	width: 200px;
+	height: 110px;
+	border: 5px solid #0a2d4b;
+	background: linear-gradient(180deg, rgba(85, 150, 126, 1) 38%, rgba(56, 118, 93, 1) 38%, rgba(50, 109, 85, 1) 79%, rgba(46, 104, 80, 1) 80%);
+}
+.door__doorknob {
+	position: relative;
+	transform: translate(13px, 18px);
+	width: 35px;
+	height: 15px;
+	background-color: #092e49;
+	border-radius: 8px;
+}
+.door__knob {
+	position: absolute;
+	top: 5px;
+	left: 12px;
+	width: 20px;
+	height: 5px;
+	background-color: #bebec0;
+	border-radius: 8px;
+}
+.door__shadow {
+	position: absolute;
+	top: 8%;
+	left: 5%;
+	width: 90%;
+}
+/* ------------------------------ */
+.car__back {
+	position: absolute;
+	left: -250px;
+	top: 0;
+}
+.back__container {
+	position: relative;
+	width: 250px;
+	height: 110px;
+	border: 5px solid #0a2d4b;
+	border-right: none;
+	border-radius: 54% 46% 0% 100% / 66% 0% 100% 34%;
+	background: linear-gradient(180deg, rgba(85, 150, 126, 1) 38%, rgba(56, 118, 93, 1) 38%, rgba(50, 109, 85, 1) 79%, rgba(46, 104, 80, 1) 80%);
+}
+.back__wing {
+	height: 53px;
+	transform: translate(92px, 46px) rotate(5deg);
+}
+.back__arrow {
+	width: 96%;
+	left: 10px;
+	border-radius: 20px 0 0 0;
+}
+.back__shadow {
+	position: absolute;
+	top: 8%;
+	width: 50%;
+	left: 112px;
+}
+.back__shadow-short {
+	width: 13px;
+	height: 5px;
+	border-radius: 15px;
+	background-color: #87b6a4;
+	transform: translate(90px, -80px);
+}
+.back__wheel {
+	position: absolute;
+	top: 50px;
+	left: 100px;
+}
+.back__lamp {
+	transform: translate(15px, 1px) rotate(92deg);
+	width: 27px;
+}
+.back__bumper {
+	width: 35px;
+	transform: translate(-16px, -4px) rotate(0deg);
+}
+
+/* ------------------------------ */
+.cockpit {
+	position: relative;
+}
+.cockpit__front {
+	position: absolute;
+	left: 118px;
+	top: -58px;
+	width: 0;
+	height: 0;
+	border-left: 0px solid transparent;
+	border-right: 85px solid transparent;
+	border-bottom: 58px solid #55967e;
+}
+.cockpit__front::before {
+	content: "";
+	display: inline-block;
+	transform: translate(-9px, 19px) rotate(35deg);
+	height: 5px;
+	width: 105px;
+	background-color: #0a2d4b;
+	border-radius: 10px;
+}
+.cockpit__front::after {
+	content: "";
+	display: inline-block;
+	transform: translate(24px, 4px) rotate(0deg);
+	width: 0;
+	height: 0;
+	border-left: 0px solid transparent;
+	border-right: 56px solid transparent;
+	border-bottom: 38px solid #99bece;
+}
+.cockpit__middle {
+	position: absolute;
+	left: 0;
+	top: -60px;
+	width: 120px;
+	height: 60px;
+	border-top: 5px solid #0a2d4b;
+	border-left: none;
+	background-color: #55967e;
+}
+
+.cockpit__window {
+	content: "";
+	position: absolute;
+	left: -26px;
+	top: 12px;
+	width: 169px;
+	height: 48px;
+	background-color: #99bece;
+	border: 5px solid #0a2d4b;
+	border-right: none;
+	border-radius: 25px 0 0 0;
+	z-index: 2;
+}
+.cockpit__window::before {
+	content: "";
+	display: inline-block;
+	transform: translate(-2px, 8px) rotate(90deg);
+	width: 47px;
+	height: 5px;
+	background-color: #0a2d4b;
+}
+.cockpit__window::after {
+	content: "";
+	display: inline-block;
+	transform: translate(98px, 9px) rotate(45deg);
+	width: 60px;
+	height: 5px;
+	background-color: #0a2d4b;
+}
+.cockpit__back {
+	position: absolute;
+	left: -143px;
+	top: -58px;
+	width: 0;
+	height: 0;
+	border-left: 143px solid transparent;
+	border-right: 0px solid transparent;
+	border-bottom: 58px solid #55967e;
+}
+.cockpit__back::before {
+	content: "";
+	display: inline-block;
+	transform: translate(-152px, 21px) rotate(-23deg);
+	height: 5px;
+	width: 160px;
+	background-color: #0a2d4b;
+	border-radius: 10px;
+}
+.circle-shadow {
+	position: relative;
+	z-index: 1;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+.shadow__shape {
+	width: 100%;
+	height: 17px;
+	border-radius: 40%;
+	background-color: #0a2d4b;
+
+	transform: translate(17px, -300px);
+}
+@keyframes shift {
+	0% {
+		transform: translate(0px, 5px);
+	}
+	100% {
+		transform: translate(0px, -5px);
+	}
+}
+@keyframes car {
+	0% {
+		transform: translate(-340px, 0px) scale(0.7);
+	}
+	100% {
+		transform: translate(2100px, 0px) scale(0.7);
+	}
+}
+@keyframes rotat {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@keyframes lamp {
+	0% {
+	}
+	100% {
+		border: none;
+		background-color: #ffb4b2;
+		box-shadow: 0px 0px 20px 10px #ffb4b2;
+	}
+}
