@@ -1,0 +1,7 @@
+ДОМАШКА №14:
+1) Верстаем http://joxi.ru/eAOxq6aT6ZlaJr с примерением FLEX
+2) Верстаем http://joxi.ru/ZrJRVjWHb6lWkr с примерением FLEX
+Доп. материалы:
+1) Шпаргалки: https://fls.guru/flexbox.html
+2) Видео https://www.youtube.com/playlist?list=PLM6XATa8CAG5mPV60dMmjMRrHVW4LmV2x
+3) Играем https://flexboxfroggy.com/#ru 
