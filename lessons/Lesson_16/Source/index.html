@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" href="css/style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Lesson 16</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<main class="main">
+				<div class="appointment">
+					<div class="appointment__container">
+						<h1 class="appointment__title">Make an appointment</h1>
+						<form class="appointment__form form" action="#">
+							<div class="form__inners">
+								<div class="form__inner"><input class="form__inp" id="username" placeholder="Name" autocomplete="off" type="text" name="username"></div>
+								<div class="form__inner"><input class="form__inp" autocomplete="off" required placeholder="Email" name="email" value="" type="email"></div>
+								<div class="form__inner"> <input class="form__inp" tabindex="3" autocomplete="off" required placeholder="Phone Number" name="phone" value="" type="tel"></div>
+								<div class="form__inner"> <input class="form__inp" autocomplete="off" required placeholder="Select Service" name="select" value="" type="text"></div>
+								<div class="form__inner"><textarea class="form__inp form__inp_height" name="textarea" placeholder="Tell us about your puppers include his/her name"></textarea></div>
+							</div>
+							<button class="form__button" type="submit">Make an Appointment</button>
+						</form>
+					</div>
+				</div>
+				<div class="summary">
+					<div class="summary__container">
+						<div class="summary__heading">
+							<h2 class="summary__title title">Summary</h2>
+							<h2 class="summary__subtitle">Estimate Shipping and Tax</h2>
+							<p class="summary__descr descr">Enter your destination to get a shipping estimate.</p>
+						</div>
+						<form class="summary__form form-summary" action="#">
+							<div class="form-summary__items items">
+								<div class="form-summary__item item">
+									<label for="country" class="form-summary__label label">Country</label>
+									<select id="country" class="form-summary__input input" name="select">
+										<option value="1">Australia</option>
+										<option value="2">Ukraine</option>
+										<option value="3">Poland</option>
+										<option value="4">USA</option>
+										<option value="5">England</option>
+										<option selected value="6">Scotland</option>
+									</select>
+								</div>
+								<div class="form-summary__item item">
+									<label for="state" class="form-summary__label label">State/Province</label>
+									<input id="state" class="form-summary__input input" autocomplete="off" required name="state" value="" type="text">
+								</div>
+								<div class="form-summary__item item">
+									<label for="postal" class="form-summary__label label">Zip/Postal Code</label>
+									<input id="postal" class="form-summary__input input" autocomplete="off" required name="postal" value="" type="text">
+								</div>
+								<div class="form-summary__item item">
+									<div class="form-summary__radio radio">
+										<div class="radio__item">
+											<label class="radio__label label" for="rate">Standard Rate</label>
+											<div class="radio__buttons">
+												<input class="radio__input" id="rate" type="radio" checked name="getting" value="rate">
+												<label class="radio__text" for="rate"> Price may vary depending on the item/destination. Shop Staff will contact you. $21.00</label>
+											</div>
+										</div>
+										<div class="radio__item">
+											<label class="radio__label label" for="store">Pickup from store</label>
+											<div class="radio__buttons">
+												<input class="radio__input" id="store" type="radio" name="getting" value="store">
+												<label class="radio__text" for="store">1234 Street Adress City Address, 1234 $0.00</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<h2 class="summary__subtitle summary__subtitle_nm">Apply Discount Code</h2>
+								<div class="form-summary__item item">
+									<label for="discount" class="form-summary__label label">Enter discount code</label>
+									<input id="discount" class="form-summary__input input" placeholder="Enter Discount code" autocomplete="off" required name="discount" value="" type="text">
+								</div>
+							</div>
+							<button class="form-summary__button" type="submit">Apply Discount</button>
+						</form>
+					</div>
+				</div>
+				<div class="registered">
+					<div class="registered__container">
+						<div class="registered__heading">
+							<h2 class="registered__title title">Registered Customers</h2>
+							<h3 class="registered__descr descr">If you have an account, sign in with your email address.</h3>
+						</div>
+						<form class="registered__form form" action="#">
+							<div class="form__items items">
+								<div class="form__item item">
+									<label for="name" class="form__label label">Email <span class="form__star">*</span></label>
+									<input id="name" type="text" class="form__input input" name="name" placeholder="Your Name">
+								</div>
+								<div class="form__item item">
+									<label for="password" class="form__label label">Password <span class="form__star star">*</span></label>
+									<input id="password" type="text" class="form__input input" name="password" placeholder="Your Name">
+								</div>
+							</div>
+							<div class="registered__sign">
+								<button class="registered__button btn" type="submit">Sign In</button>
+								<a href="#" class="registered__forgot">Forgot Your Password?</a>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="shipping">
+					<div class="shipping__container">
+						<h2 class="shipping__title title divider">Registered Customers</h2>
+						<form class="shipping__form" action="#">
+							<div class="shipping__items items divider">
+								<div class="shipping__item item">
+									<label for="email" class="shipping__label label">Email Address<span class="shipping__star star">*</span></label>
+									<input id="email" class="shipping__input input" autocomplete="off" required name="email" value="" type="email">
+								</div>
+								<p class="shipping__text divider">You can create an account after checkout.</p>
+								<div class="shipping__item item">
+									<label for="name2" class="shipping__label label">First Name<span class="shipping__star star">*</span></label>
+									<input id="name2" class="shipping__input input" autocomplete="off" required name="name2" value="" type="text">
+								</div>
+								<div class="shipping__item item">
+									<label for="last-name" class="shipping__label label">Last Name<span class="shipping__star star">*</span></label>
+									<input id="last-name" class="shipping__input input" autocomplete="off" required name="last-name" value="" type="text">
+								</div>
+								<div class="shipping__item item">
+									<label for="company" class="shipping__label label">Company<span class="shipping__star star">*</span></label>
+									<input id="company" class="shipping__input input" autocomplete="off" required name="company" value="" type="text">
+								</div>
+								<div class="shipping__item item">
+									<label for="address2" class="shipping__label label">Street Address<span class="shipping__star star">*</span></label>
+									<input id="address2" class="shipping__input input" autocomplete="off" required name="address2" value="" type="text">
+									<input class="shipping__input input" autocomplete="off" required name="address3" value="" type="text">
+								</div>
+								<div class="shipping__item item">
+									<label for="city" class="shipping__label label">City<span class="shipping__star star">*</span></label>
+									<input id="city" class="shipping__input input" autocomplete="off" required name="city" value="" type="text">
+								</div>
+								<div class="shipping__item item">
+									<label for="state2" class="shipping__label label">State/Province<span class="shipping__star star">*</span></label>
+									<select id="state2" class="shipping__input input" name="state2">
+										<option selected disabled value>Please, select a region, state or province</option>
+										<option value="1">Australia</option>
+										<option value="2">Ukraine</option>
+										<option value="3">Poland</option>
+										<option value="4">USA</option>
+										<option value="5">England</option>
+										<option value="6">Scotland</option>
+									</select>
+								</div>
+								<div class="shipping__item item">
+									<label for="zip" class="shipping__label label">Zip/Postal Code<span class="shipping__star star">*</span></label>
+									<input id="zip" class="shipping__input input" autocomplete="off" required name="zip" value="" type="text">
+								</div>
+								<div class="shipping__item item">
+									<label for="country2" class="shipping__label label">Country<span class="shipping__star star">*</span></label>
+									<select id="country2" class="shipping__input input" name="country2">
+										<option selected value="1">Australia</option>
+										<option value="2">Ukraine</option>
+										<option value="3">Poland</option>
+										<option value="4">USA</option>
+										<option value="5">England</option>
+										<option value="6">Scotland</option>
+									</select>
+								</div>
+								<div class="shipping__item item">
+									<label for="phone2" class="shipping__label label">Phone Number<span class="shipping__star star">*</span></label>
+									<input id="phone2" class="shipping__input input" tabindex="3" autocomplete="off" required name="phone2" value="" type="tel">
+								</div>
+							</div>
+							<div class="shipping__radio radio">
+								<div class="radio__item">
+									<label class="radio__label label" for="price">Standard Rate</label>
+									<div class="radio__buttons">
+										<input class="radio__input" id="price" type="radio" checked name="getting" value="price">
+										<label class="radio__text" for="price"> Price may vary depending on the item/destination. Shop Staff will contact you. $21.00</label>
+									</div>
+								</div>
+								<div class="radio__item">
+									<label class="radio__label label" for="street">Pickup from store</label>
+									<div class="radio__buttons">
+										<input class="radio__input" id="street" type="radio" name="getting" value="street">
+										<label class="radio__text" for="street">1234 Street Adress City Address, 1234 $0.00</label>
+									</div>
+								</div>
+							</div>
+							<button class="shipping__button btn" type="submit">Next</button>
+						</form>
+					</div>
+				</div>
+			</main>
+		</div>
+	</body>
+</html>
