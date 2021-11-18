@@ -167,6 +167,7 @@ body {
 	cursor: pointer;
 	align-self: flex-start;
 	flex: 0 0 20px;
+	min-width: 20px; /* что бы outline был на всю ширину контента, и обязательно нужно указать flex-shrink:1; что бы не сплюснулся квадратик если этому объекту добавить контента. */
 	height: 20px;
 	content: "";
 	background-color: #fff;

@@ -121,7 +121,7 @@ body {
 	color: rgba(255, 255, 255, 0.8);
 }
 .form__inp_height {
-	height: 180px;
+	min-height: 180px;
 	padding: 24px;
 	resize: vertical;
 }
