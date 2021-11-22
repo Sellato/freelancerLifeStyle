@@ -1,0 +1,147 @@
+<!-- УРОК №18
+ https://youtu.be/fcqLtZM9U7w 
+
+41:12 (Начало урока) Настройка препроцессора SCSS. 
+54:17 Переменные
+1:02:30 Вложенность
+1:21:57 @import. Разные файлы
+1:28:37 mixin
+1:39:32 Шаблоны
+1:50:00 Цикл
+1:58:40 function 
+-->
+
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" href="css/style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Lesson 18</title>
+	</head>
+	<body>
+		<div class="wrapper loading">
+			<header class="header"></header>
+			<main class="main">
+
+				<!-- карточки с макета healthyfood -->
+				<div class="block">
+					<div class="block__container">
+						<div class="block__items">
+							<div class="block__item block__item_big">
+								<div class="item-block"><!-- как правило карточки у нас вложены в конструкцию. Всю карточку ссылкой делать нельзя потому что там могуд быть разные элементы , весьти в разные места, разве что это предусмотрено тех заданием.-->
+									<a href="" class="item-block__picture _ibg"><!-- изображения в таких карточках в 99% являются сылкой, потому что если мы не сделаем это ссылкой, то пользователю что бы перейти внутрь этой карточки,
+										он может воспользоваться либо title либо кнопкой подробнее, и на много удобнее это сделать кликнув на изображение. 
+									Добавляем класс _ibg к родителю картинки.-->
+										<img class="item-block__image" src="img/mainpage/impact/dog.jpg" alt="image">
+									</a>
+									<div class="item-block__body">
+										<a href="" class="item-block__title">Featured Meal</a><!-- title тоже должен быть ссылкой, что бы при клике на него что бы пользователь мог попадать дальше, 
+											если у нас при нажатии на этот объект просто что то происходило(мы никуда не ухадили) тогда мы бы могли  использовать элемент формы button без самой формы.-->
+										<div class="item-block__text">
+											Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+										</div>
+										<a href="" class="item-block__button">Button</a><!-- здесь нужна именно ссылко потому что мы будем куда то переходить -->
+									</div>
+								</div>
+							</div>
+							<div class="block__item">
+								<div class="item-block">
+									<a href="" class="item-block__picture _ibg">
+										<img class="item-block__image" src="img/mainpage/impact/dog.jpg" alt="image">
+									</a>
+									<div class="item-block__body">
+										<a href="" class="item-block__title">Featured Meal</a>
+										<div class="item-block__text">
+											Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quaerat itaque obcaecati ullam culpa libero atque, a sequi cum autem, nam temporibus iure consectetur optio natus explicabo numquam dolores! Quisquam.
+										</div>
+										<a href="" class="item-block__button"><span class="button">Button</span></a>
+									</div>
+								</div>
+							</div>
+							<div class="block__item">
+								<div class="item-block">
+									<a href="" class="item-block__picture _ibg">
+										<img class="item-block__image" src="img/mainpage/services/decor.png" alt="image">
+									</a>
+									<div class="item-block__body">
+										<a href="" class="item-block__title">Featured Meal</a>
+										<div class="item-block__text">
+											Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+										</div>
+										<a href="" class="item-block__button">Button</a>
+									</div>
+								</div>
+							</div>
+							<div class="block__item">
+								<div class="item-block">
+									<a href="" class="item-block__picture _ibg">
+										<img class="item-block__image" src="img/01.png" alt="image">
+									</a>
+									<div class="item-block__body">
+										<a href="" class="item-block__title">Featured Meal</a>
+										<div class="item-block__text">
+											Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+										</div>
+										<a href="" class="item-block__button">Button</a>
+									</div>
+								</div>
+							</div>
+							<div class="block__item">
+								<div class="item-block">
+									<a href="" class="item-block__picture _ibg">
+										<img class="item-block__image" src="img/mainpage/impact/dog.jpg" alt="image">
+									</a>
+									<div class="item-block__body">
+										<a href="" class="item-block__title">Featured Meal</a>
+										<div class="item-block__text">
+											Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+										</div>
+										<a href="" class="item-block__button">Button</a>
+									</div>
+								</div>
+							</div>
+							<div class="block__item">
+								<div class="item-block">
+									<a href="" class="item-block__picture _ibg">
+										<img class="item-block__image" src="img/mainpage/impact/dog.jpg" alt="image">
+									</a>
+									<div class="item-block__body">
+										<a href="" class="item-block__title">Featured Meal</a>
+										<div class="item-block__text">
+											Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+										</div>
+										<a href="" class="item-block__button">Button</a>
+									</div>
+								</div>
+							</div>
+							<div class="block__item">
+								<div class="item-block">
+									<a href="" class="item-block__picture _ibg">
+										<img class="item-block__image" src="img/mainpage/impact/dog.jpg" alt="image">
+									</a>
+									<div class="item-block__body">
+										<a href="" class="item-block__title">Featured Meal</a>
+										<div class="item-block__text">
+											Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+										</div>
+										<a href="" class="item-block__button">Button</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Пример -->
+				<ul class="list">
+					<li class="list__item"><a href="" class="list__link">Пункт №1</a></li>
+					<li class="list__item"><a href="" class="list__link">Пункт №2</a></li>
+					<li class="list__item"><a href="" class="list__link">Пункт №3</a></li>
+					<li class="list__item"><a href="" class="list__link">Пункт №4</a></li>
+				</ul>
+			</main>
+			<footer class="footer"></footer>
+		</div>
+	</body>
+</html>

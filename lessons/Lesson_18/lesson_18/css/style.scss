@@ -1,0 +1,254 @@
+/* 
+УРОК №18
+ https://youtu.be/fcqLtZM9U7w 
+ */
+// Миксин - это набор настраиваемого кода.
+@import "_mixins"; /* должен быть в самом верху */
+
+/* 
+&display=swap
+&subset=cyrillic-ext 
+*/
+@import url("https://fonts.googleapis.com/css?family=Roboto:regular,500,700,900&display=swap");
+@import "_null"; /* добавляем подчеркивание что бы не добавлялся отдельный css файл  */
+
+body {
+	line-height: 1;
+	color: #fff;
+	background-color: #333;
+	font-family: "Roboto";
+}
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+/* Такой коментарий попадет в файл css */
+// А такой не попадет
+/* ------------------------------ */
+// Переменная
+// Это некая ячейка где мы можем хранить информацию
+// Основной цвет
+$main: green;
+
+/* ------------------------------ */
+
+.main {
+	flex-grow: 1;
+}
+._ibg {
+	// Этот инстумент нужен для того что бы любая картинка которую мы зададим смогла адекватно вписаться в нужный нам размер, в нужный нам квадрат.
+	// Это относится к отзывчивой верстки
+	/* сокращение - image background это _ibg*/
+	position: relative;
+	img {
+		object-fit: cover;
+		/* получаем изображение которое масштабируется внутрь блока. Изображение перестанет растягиваться и оно подобно background вписывается в объект.*/
+		// object-position: center;оно будет отцентровано
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+}
+// Миксин IBG
+@mixin ibg($position: center) {
+	// это что то типа модификатора но без html
+	position: relative;
+	img {
+		object-fit: cover;
+		object-position: $position;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+}
+/* Условные ПК, ноуты и телевизоры */
+/* 1050 из макета (контейнер + отступы) */
+@media (max-width: 1050px) {
+}
+/* Условные планшеты */
+@media (max-width: 991.98px) {
+}
+/* Условные мобилки */
+@media (max-width: 767.98px) {
+}
+
+[class*="__container"] {
+	max-width: 1140px;
+	margin: 0px auto;
+	padding: 0px 15px;
+}
+
+/* №1 */
+@media (max-width: 1140px) {
+	[class*="__container"] {
+		/* max-width: 970px; */
+	}
+}
+/* №2 */
+@media (max-width: 991.98px) {
+	[class*="__container"] {
+		/* max-width: 750px; */
+	}
+}
+/* №3 */
+@media (max-width: 767.98px) {
+	[class*="__container"] {
+		/* max-width: none; */
+	}
+}
+
+.block {
+	// .block__container
+	&__container {
+	}
+	// .block__items
+	&__items {
+		display: flex;
+		flex-wrap: wrap;
+		row-gap: 30px;
+		margin: 0px -15px;
+	}
+	// .block__item
+	&__item {
+		padding: 0px 15px;
+		flex: 1 1 33.333%; /* карточки 3  в ряд . Можем позволить объекту увеличиваться flex-grow: 1; */
+		min-width: 290px;
+	}
+}
+.item-block {
+	display: flex;
+	height: 100%; /* что бы выровнять все карточки по высоте и что бы прибить кнопки снизу, если в какой то из карточек добавится контент  */
+	flex-direction: column;
+	@media (min-width: 1140px) {
+		max-width: 350px; /* делаем ограничение по ширине самой карточке .item-block, а не флекс элементу .block__item потому что здесь сложно с падингами   */
+	}
+	// .item-block__picture это ссылка с изображением. Эта ссылка строчный тег но поскольку мы задали родителю display: flex; то она  превратилась в блочно-строчный в перевернутом виде(flex-direction: column;)
+	&__picture {
+		//  Сюда будет картинка выводится с помощью админки(с помощью cms) и по этому намного удобнее работать с привычным img, а не выводить картинку через background
+		@include ibg(top); /* это означает object-position: top; с помощью миксина мы можем влиять на этот код, передавать данные
+		@extend %ibg;  а шаблон не можем менять.
+		@extend .ibg;  мы можем этот класс тоже подключать только не через % а чепез точку. То есть к этому &__picture присвоится ibg шаблон.*/
+		padding: 0px 0px 74.28571428571429% 0px; /* объяснение на 7:50 https://www.youtube.com/watch?v=fcqLtZM9U7. 260px(высота картинки) делим на ширину карточки 350px  и умножаем на 100% и получаем 74.28571428571429%. */
+		// 		Благодаря падингу мы создали размер контейнера внутри которого абсолютное изображение которое на данный момент полностью растянуто - width:100%; height:100%; И поскольку падинг процентный - он берется от родителя,
+		// родитель 33.333%, то при сужении экрана у нас пропорционально  сужается изображение и уменьшается его высота(пропорционально). Это есть эффект отзывчивости.
+	}
+	// .item-block__image это изображение
+	&__image {
+	}
+	// .item-block__body
+	&__body {
+		flex: 1 1 auto; /* позволяем ему увеличиваться,что б он занял всю высоту, что бы прибить кнопки снизу  */
+		padding: 15px;
+		display: flex;
+		flex-direction: column;
+		background-color: rgb(66, 66, 66);
+		*:not(:last-child) {
+			margin: 0px 0px 15px 0px;
+		}
+	}
+	// .item-block__title
+	&__title {
+		font-size: 40px;
+		color: #fff;
+	}
+	// .item-block__text
+	&__text {
+		line-height: 150%;
+		color: #eee;
+		flex: 1 1 auto; /* позволим тексту тоже увеличиваться что бы выровнять все карточки по высоте, и таким образом мы прибьем кнопки к низу */
+		font-size: 16px;
+	}
+	// .item-block__button
+	&__button {
+		padding: 10px 15px;
+		text-align: center;
+		color: #fff;
+		// background-color: #000; когда мы коментируем таким образом какой то объект, он просто не попадает в итоговые стили(в css).
+		// Точно также пустой селектор не попадет в css, при этом в самом препроцессоре он останется
+		@include theme(green);
+		&::before {
+			content: "";
+		}
+		&::after {
+			content: "";
+		}
+		&:hover {
+			background-color: yellow;
+		}
+		.loading & {
+			// Часто используется когда мы работаем с js и динамическоми классами
+			// это означает что сперва loading а потом __button
+			// background-color: #fff;
+		}
+	}
+}
+// Пример
+.list {
+	padding: 30px;
+	// .list__item
+	&__item {
+		transform: translate(-100%, 0px); /* пункты слева за viewportom */
+		transition: 0.3s;
+
+		// Строим цикл от 1 до 5(больше 1 но меньше 5)
+		// Переменная $var будет меняться( 1 , 2, 3, 4, 5) пока не достигнет 5. Это означает что мы можем докопаться до nth-child и впихать туда переменную.
+		@for $var from 1 to 5 {
+			$delay: 0.1 * $var; /* мы каждый раз умножаем переменную (которая у нас 1,2,3,4,5) на 0.1, 
+			соответственно получаем новое значение. И присваеваем уже transition-delay каждый раз новый	результат, 
+			в итоге получаем разную задержку. */
+			/* 			@if ($var == 1) {
+				// таким образом мы получим у первого объекта задержку равную нулю
+				$delay: 0;
+			} */
+			&:nth-child(#{$var}) {
+				transition-delay: $delay + s;
+			}
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 15px;
+		}
+	}
+	// .list__link
+	&__link {
+		color: #fff;
+	}
+	&:hover {
+		.list__item {
+			transform: translate(0px, 0px); /* при ховере вылазят */
+		}
+	}
+}
+.list {
+	// .list__item
+	&__item {
+	}
+	// .list__link
+	&__link {
+	}
+}
+.footer {
+}
+// ------------------------------------
+// Пример вложенности
+/* .item-block__button {
+	padding: 10px 15px;
+	text-align: center;
+	color: #fff;
+	background-color: $main;
+	&.button {
+		// это значит 2 класса сразу. Мы работаем внутри этого класса .item-block__button и добавляем к ниму еще 1 класс .button
+		background-color: #000;
+	}
+	.button {
+		// теперь обращение идет ко всем классам button внутри всех объектов с классом .item-block__button
+		background-color: #000;
+	}
+} */
+// ------------------------------------
