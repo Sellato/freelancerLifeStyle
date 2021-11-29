@@ -1,0 +1,322 @@
+@use "sass:math";
+//<МИКСИНЫ>===============================================================================================
+@import "base/mixins";
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+
+//<Подключаем шрифты>=======================================================================================
+//&display=swap&subset=cyrillic-ext
+@import "base/fonts";
+//</Подключаем шрифты>=======================================================================================
+
+//<Иконочные шрифты>==========================================================================================
+//@import "base/icons";
+//</Иконочные шрифты>==========================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontFamily: "";
+$fontSize: rem(14); // где 14(px) - размер шрифта по умолчанию из макета
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>===========================================================================================================
+
+// Минимальная ширина страницы
+$minWidth: 320;
+// Ширина полотна (макета)
+$maxWidth: 1920;
+// Ширина ограничивающего контейнера (0 = нет ограничения)
+$maxWidthContainer: 1170;
+// Общий отступ у контейнера
+// (30 = по 15px слева и справа, 0 = нет отступа)
+$containerPadding: 30;
+
+// Тип адаптива:
+// 1 = отзывчивость (у контейнера нет брейкпоинтов),
+// 2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
+$responsiveType: 1;
+
+// Ширина страбатывания первого брейкпоинта
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Брейк-поинты
+$pc: em($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
+$mobile: em(767.98); // Телефоны L
+$mobileSmall: em(479.98); // Телефоны S
+
+// Основной цвет шрифта
+$mainColor: #000;
+
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "base/null";
+
+body {
+	color: $mainColor;
+	background-color: #333;
+	// Скролл заблокирован
+	.lock & {
+		overflow: hidden;
+	}
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+	min-height: 100%;
+	display: grid;
+	overflow: hidden;
+	grid-template-rows: auto 1fr auto;
+	// Сайт загружен
+	.loaded & {
+	}
+}
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+/*
+(i) Стили будут применяться ко 
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+
+@if ($responsiveType==1) {
+	// Отзывчивая
+	[class*="__container"] {
+		@if ($maxWidthContainer>0) {
+			max-width: rem($maxWidthContainer);
+			box-sizing: content-box;
+			margin: 0 auto;
+		}
+		@if ($containerPadding>0) {
+			padding: 0 rem(math.div($containerPadding, 2));
+		}
+	}
+} @else {
+	// По брейк-поинтам
+	[class*="__container"] {
+		margin: 0 auto;
+		@if ($maxWidthContainer>0) {
+			max-width: rem($maxWidthContainer);
+			box-sizing: content-box;
+		} @else {
+			@if ($containerPadding>0) {
+				padding: 0 rem(math.div($containerPadding, 2));
+			}
+		}
+		@media (max-width: $pc) {
+			max-width: rem(970);
+		}
+		@media (max-width: $tablet) {
+			max-width: rem(750);
+		}
+		@media (max-width: $mobile) {
+			max-width: none;
+			@if ($containerPadding>0 and $maxWidthContainer>0) {
+				padding: 0 rem(math.div($containerPadding, 2));
+			}
+		}
+	}
+}
+
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+@import "ui";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+// Подключение базовых стилей
+// Для подключения/отключения конкретных стилей смотри base.scss
+@import "base";
+
+// Подключение стилей отдельных страниц
+@import "header";
+@import "footer";
+@import "home";
+
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+.page {
+	min-width: 0;
+}
+
+//===================================================================================================================================
+
+.list {
+	&._active {
+		background-color: #7a956b;
+		padding: 15px;
+	}
+}
+.list__item {
+}
+.list__link {
+	font-size: 30px;
+	color: #fff;
+	&._active {
+		color: red;
+	}
+	&._open {
+		color: green;
+	}
+}
+
+.someButton {
+	background-color: yellow;
+	color: #000;
+	padding: 10px 15px;
+	cursor: pointer;
+}
+
+/*
+.some-menu {
+	margin: 0px auto;
+	max-width: 800px;
+	background-color: #7a956b;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding: 10px 15px;
+	gap: 15px;
+	// .some-menu__icon
+	&__icon {
+		display: none;
+		flex: 0 0 30px;
+		height: 20px;
+		position: relative;
+		z-index: 3;
+		background-color: transparent;
+		span {
+			position: absolute;
+			top: 50%;
+			height: 2px;
+			left: 0;
+			width: 100%;
+			background-color: #333;
+			margin: -1px 0px 0px 0px;
+		}
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			width: 100%;
+			left: 0;
+			height: 2px;
+			background-color: #333;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		._menu-active & {
+			span {
+				transform: scale(0);
+			}
+			&::before {
+				top: 50%;
+				margin: -1px 0px 0px 0px;
+				transform: rotate(-45deg);
+			}
+			&::after {
+				top: 50%;
+				margin: -1px 0px 0px 0px;
+				transform: rotate(45deg);
+			}
+		}
+		@media (max-width: em(700)) {
+			display: block;
+		}
+	}
+	// .some-menu__body
+	&__body {
+		flex: 1 1 auto;
+		@media (max-width: em(700)) {
+			position: fixed;
+			top: 0;
+			left: -100%;
+			transition: left 0.3s ease 0s;
+			overflow: auto;
+			width: 100%;
+			height: 100%;
+			background-color: #7a956b;
+			padding: 55px 15px;
+			&::before {
+				content: "";
+				position: fixed;
+				width: 100%;
+				height: 40px;
+				top: 0px;
+				transition: left 0.3s ease 0s;
+				left: 100%;
+				z-index: 2;
+				background-color: #576b4d;
+			}
+			._menu-active & {
+				left: 0;
+				&::before {
+					left: 0;
+				}
+			}
+		}
+	}
+	// .some-menu__list
+	&__list {
+		display: flex;
+		gap: 15px;
+		@media (max-width: em(700)) {
+			flex-direction: column;
+		}
+	}
+	// .some-menu__item
+	&__item {
+	}
+	// .some-menu__link
+	&__link {
+		color: #fff;
+		text-transform: uppercase;
+	}
+}
+*/
+
+.form {
+	padding: 30px;
+	background-color: #794f45;
+	color: #fff;
+}
+.form__line {
+	display: flex;
+	flex-direction: column;
+	margin: 0px 0px 30px 0px;
+}
+.form__label {
+	font-size: 20px;
+	margin: 0px 0px 10px 0px;
+}
+.form__input {
+	height: 40px;
+	padding: 0px 15px;
+}
+.form__result {
+	font-size: 30px;
+	margin: 0px 0px 30px 0px;
+}
+.form__button {
+}
+.button {
+	padding: 15px 20px;
+	font-size: 20px;
+	background-color: yellow;
+}
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================

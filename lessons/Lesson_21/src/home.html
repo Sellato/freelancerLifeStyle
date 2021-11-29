@@ -1,0 +1,91 @@
+<!-- 
+	УРОК №21 
+https://youtu.be/trAEBa1Z0S4
+ -->
+
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('_head.htm',{
+	"title":"Главная"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('_header.htm',{})
+			<main class="page">
+
+				<form class="form" action="#">
+					<div class="form__line">
+						<label for="num_1" class="form__label">Число №1</label>
+						<input id="num_1" autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="" class="form__input">
+					</div>
+					<div class="form__line">
+						<label for="num_2" class="form__label">Число №2</label>
+						<input id="num_2" autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="" class="form__input">
+					</div>
+					<div class="form__result"></div>
+					<button type="submit" class="form__button button">Посчитать</button>
+				</form>
+
+				<button type="button" class="someButton">Сложить 35 и 10</button>
+
+				<!-- 
+				<ul class="list">
+					<li class="list__item"><a href="" class="list__link"><span>Пункт</span></a></li>
+					<li class="list__item"><a href="" class="list__link">Пункт</a></li>
+					<li class="list__item"><a href="" class="list__link">Пункт</a></li>
+					<li class="list__item"><a href="" class="list__link">Пункт</a></li>
+					<li class="list__item"><a href="" class="list__link">Пункт</a></li>
+					<li class="list__item"><a href="" class="list__link">Пункт</a></li>
+				</ul>
+				<div class="block">
+					<div class="block__body">
+						<div class="block__article">
+							<ul class="list">
+								<li class="list__item"><a href="" class="list__link">Пункт</a></li>
+								<li class="list__item"><a href="" class="list__link">Пункт</a></li>
+								<li class="list__item"><a href="" class="list__link">Пункт</a></li>
+								<li class="list__item"><a href="" class="list__link">Пункт</a></li>
+								<li class="list__item"><a href="" class="list__link">Пункт</a></li>
+								<li class="list__item"><a href="" class="list__link">Пункт</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				 -->
+				<!-- <button class="someButton" type="button">Я кнопка</button> -->
+				<!-- 
+				<div class="some-menu">
+					<nav class="some-menu__body">
+						<ul class="some-menu__list">
+							<li class="some-menu__item">
+								<a href="" class="some-menu__link">Пункт №1</a>
+							</li>
+							<li class="some-menu__item">
+								<a href="" class="some-menu__link">Пункт №2</a>
+							</li>
+							<li class="some-menu__item">
+								<a href="" class="some-menu__link">Пункт №3</a>
+							</li>
+							<li class="some-menu__item">
+								<a href="" class="some-menu__link">Пункт №4</a>
+							</li>
+							<li class="some-menu__item">
+								<a href="" class="some-menu__link">Пункт №5</a>
+							</li>
+						</ul>
+					</nav>
+					<button class="some-menu__icon">
+						<span></span>
+					</button>
+				</div>
+				 -->
+
+
+
+			</main>
+			@@include('_footer.htm',{})
+		</div>
+		<!-- @@include('_popup.htm',{}) -->
+		@@include('_js.htm',{})
+	</body>
+</html>
