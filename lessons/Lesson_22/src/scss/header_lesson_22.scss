@@ -1,0 +1,79 @@
+//====================================================================================================
+// Задача:
+// В момент достижения блока шапка отлипает.
+.sector {
+	// наша шапка
+	position: fixed;
+	width: 100%;
+	height: 50px; /* если мы меняем высоту шапки у нас все равно все будет работать хорошо */
+	top: 0;
+	left: 0;
+	padding: 10px 0;
+	background-color: green;
+	text-align: center;
+	font-size: 30px;
+	&._active {
+		position: absolute;
+	}
+}
+// какой то контент-блок
+.some-block {
+	background-color: red;
+	padding: 25px;
+	margin: 500px 0 10000px 0;
+	span {
+		display: block;
+		font-size: 35px;
+	}
+}
+//====================================================================================================
+
+//====================================================================================================
+
+//Burger
+/*
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 18px;
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			left: 0px;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: #000;
+		}
+		&::before {
+			top: 0px;
+		}
+		&::after {
+			bottom: 0px;
+		}
+		span {
+			top: calc(50% - 1px);
+		}
+		.menu-open & {
+			span {
+				transform: scale(0);
+			}
+			&::before {
+				transform: rotate(-45deg);
+				top: calc(50% - 1px);
+			}
+			&::after {
+				transform: rotate(45deg);
+				bottom: calc(50% - 1px);
+			}
+		}
+	}
+}
+*/
