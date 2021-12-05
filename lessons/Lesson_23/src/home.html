@@ -1,0 +1,49 @@
+<!-- УРОК №23 
+https://youtu.be/zpDx4gdE2V4 
+-->
+
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"Главная"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<div class="page__container">
+					<div data-showmore="text" class="block"> <!-- если это text (data-showmore="items/text") - тогда мы будем работать с высотой, если items то мы будем работать с количеством пунктов. Где то нужно обозначить что это за тип - text или items -->
+						<div data-showmore-content="100" class="block__text"><!-- мы и этуму блоку зададим атрибут data-showmore-content, так как он может быть и div и списком. -->
+							<!-- И в зависимости от того что мы укажем в главной настройке, это 100 будет высота в пикселях (data-showmore-content="100"), либо количество выводимых элементов. -->
+							<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum iste exercitationem, maiores vero odio quisquam officia veniam, sunt optio a debitis reiciendis repellat omnis. Quisquam deleniti architecto earum omnis illo.</p>
+							<div class="block__quote">
+								Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum iste exercitationem, maiores vero odio quisquam officia veniam, sunt optio a debitis reiciendis repellat omnis. Quisquam deleniti architecto earum omnis illo.
+								Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum iste exercitationem, maiores vero odio quisquam officia veniam, sunt optio a debitis reiciendis repellat omnis. Quisquam deleniti architecto earum omnis illo.
+							</div>
+						</div>
+						<button data-showmore-button type="submit" class="block__more">More...</button>
+					</div>
+					<div data-showmore="items" class="list">
+						<ul data-showmore-content="3" class="list__item">
+							<li>Пункт #1 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus aliquid molestias nemo magni exercitationem a ducimus veritatis, distinctio commodi in natus harum ut, non sequi vel. Distinctio cum assumenda iste.</li>
+							<li>Пункт #2</li>
+							<li>Пункт #3</li>
+							<li>Пункт #4</li>
+							<li>Пункт #5</li>
+							<li>Пункт #6</li>
+							<li>Пункт #7</li>
+							<li>Пункт #8</li>
+							<li>Пункт #9</li>
+							<li>Пункт #10</li>
+						</ul>
+						<button data-showmore-button type="submit" class="list__more">More...</button>
+					</div>
+				</div>
+
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		<!-- @@include('html/_popup.htm',{}) -->
+		@@include('html/_js.htm',{})
+	</body>
+</html>

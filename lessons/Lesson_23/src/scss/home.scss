@@ -1,0 +1,51 @@
+/*  УРОК №23 
+https://youtu.be/zpDx4gdE2V4  
+*/
+//====================================================================================================
+.block {
+	background-color: #7a956b;
+	padding: 15px;
+	font-size: rem(20);
+	line-height: 130%;
+	// .block__text
+	&__text {
+	}
+	// .block__quote
+	&__quote {
+	}
+	// .block__more
+	&__more {
+		margin: 20px 0px 0px 0px;
+		background-color: #77608d;
+		padding: 10px 15px;
+		color: #fff;
+	}
+}
+.list {
+	background-color: #794f45;
+	font-size: rem(20);
+	padding: 15px;
+	// .list__item
+	&__item {
+		li {
+			&:not(:last-child) {
+				margin-bottom: 20px;
+			}
+		}
+	}
+	// .list__more
+	&__more {
+		margin: 20px 0px 0px 0px;
+		background-color: #77608d;
+		padding: 10px 15px;
+		color: #fff;
+	}
+}
+[data-showmore] {
+}
+[data-showmore-content] {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+//====================================================================================================
