@@ -1,0 +1,131 @@
+<!-- УРОК №24 
+https://youtu.be/h3GQW4mBoB0 
+-->
+
+
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"Главная"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<!-- ========================================================= -->
+				<!-- aside -->
+				<aside class="sidebar">
+					<!-- aside мы его используем тогда когда нам нужна боковая панель. -->
+					<nav class="menu">
+						<ul class="menu__list">
+							<li class="menu__item"><a href="" class="menu__link">Пункт</a></li>
+							<li class="menu__item"><a href="" class="menu__link">Пункт</a></li>
+							<li class="menu__item"><a href="" class="menu__link">Пункт</a></li>
+							<li class="menu__item"><a href="" class="menu__link">Пункт</a></li>
+						</ul>
+					</nav>
+				</aside>
+				<div class="content">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat magnam eius vero explicabo iusto, nam, fuga eaque, similique officia repellendus sequi neque quia? Hic numquam libero tenetur? Iste, alias nam!
+				</div>
+				<div class="slider">
+					<div class="slider__slide">1</div>
+					<div class="slider__slide">2</div>
+					<div class="slider__slide">3</div>
+					<div class="slider__slide">4</div>
+					<div class="slider__slide">5</div>
+					<div class="slider__slide">6</div>
+				</div>
+				<!-- ========================================================= -->
+				<!-- section - это некий целый объект, внутри которого есть свой заголовок, какие то свои элементы.  -->
+				<!-- section - это отдельная секция, но у нее есть требования - это заголовки h1-h6 -->
+				<section class="block">
+					<div class="block__container">
+						<h2 class="block__title">Заголовок</h2>
+						<div class="block__items">
+							<!-- article это как бы повторяющийся объект(карточки ). -->
+							<article class="item">
+								<!-- карточки хороше сочетаются с тегом article. Его тоже следует использовать с h1-h6 -->
+								<a href="" class="item__image-ibg"><img src="@img/cover.jpg" alt=""></a>
+								<div class="item__body">
+
+									<!-- ссылку можно использовать внутри заголовка h, но не на оборот -->
+									<h3 class="item__title"><a href="" class="item__name">Заголовок объекта</a></h3>
+									<div class="item__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, nobis.</div>
+									<a href="" class="item__link">Ссылка</a>
+								</div>
+							</article>
+							<article class="item">
+								<a href="" class="item__image-ibg"><img src="@img/cover.jpg" alt=""></a>
+								<div class="item__body">
+									<h3 class="item__title"><a href="" class="item__name">Заголовок объекта</a></h3>
+									<div class="item__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut magnam iure libero itaque voluptates tempore eos unde aperiam quia ab, voluptate quasi fugiat perspiciatis ratione doloribus aliquid reprehenderit vitae harum?</div>
+									<a href="" class="item__link">Ссылка</a>
+								</div>
+							</article>
+							<article class="item">
+								<a href="" class="item__image-ibg"><img src="@img/cover.jpg" alt=""></a>
+								<div class="item__body">
+									<h3 class="item__title"><a href="" class="item__name">Заголовок объекта</a></h3>
+									<div class="item__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, nobis.</div>
+									<a href="" class="item__link">Ссылка</a>
+								</div>
+							</article>
+							<article class="item">
+								<a href="" class="item__image-ibg"><img src="@img/cover.jpg" alt=""></a>
+								<div class="item__body">
+									<h3 class="item__title"><a href="" class="item__name">Заголовок объекта</a></h3>
+									<div class="item__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, nobis.</div>
+									<a href="" class="item__link">Ссылка</a>
+								</div>
+							</article>
+							<article class="item">
+								<a href="" class="item__image-ibg"><img src="@img/cover.jpg" alt=""></a>
+								<div class="item__body">
+									<h3 class="item__title"><a href="" class="item__name">Заголовок объекта</a></h3>
+									<div class="item__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, nobis.</div>
+									<a href="" class="item__link">Ссылка</a>
+								</div>
+							</article>
+							<article class="item">
+								<a href="" class="item__image-ibg"><img src="@img/cover.jpg" alt=""></a>
+								<div class="item__body">
+									<h3 class="item__title"><a href="" class="item__name">Заголовок объекта</a></h3>
+									<div class="item__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, nobis.</div>
+									<a href="" class="item__link">Ссылка</a>
+								</div>
+							</article>
+							<article class="item">
+								<a href="" class="item__image-ibg"><img src="@img/cover.jpg" alt=""></a>
+								<div class="item__body">
+									<h3 class="item__title"><a href="" class="item__name">Заголовок объекта</a></h3>
+									<div class="item__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, nobis.</div>
+									<a href="" class="item__link">Ссылка</a>
+								</div>
+							</article>
+						</div>
+					</div>
+				</section>
+				<!-- ========================================================= -->
+				<!-- https://www.youtube.com/watch?v=h3GQW4mBoB0 c 1:53:00 -->
+				<!-- 
+				<div class="page__container">
+					<div class="grid">
+						<div class="grid__item grid__item_v1">1</div>
+						<div class="grid__item grid__item_v1">2</div>
+						<div class="grid__item grid__item_v1">3</div>
+						<div class="grid__item grid__item_v2">4</div>
+						<div class="grid__item grid__item_v3">5</div>
+						<div class="grid__item grid__item_v4">6</div>
+						<div class="grid__item grid__item_v4">7</div>
+					</div>
+				</div>
+				 -->
+				<!-- ========================================================= -->
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		<!-- @@include('html/_popup.htm',{}) -->
+		@@include('html/_js.htm',{})
+	</body>
+</html>
