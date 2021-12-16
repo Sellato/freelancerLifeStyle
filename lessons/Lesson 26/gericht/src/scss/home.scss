@@ -1,0 +1,162 @@
+//====================================================================================================
+.mainpage {
+	// .mainpage__slider
+	&__slider {
+	}
+}
+.main-slider {
+	@include adaptiveValue("padding-top", 185, 115);
+	@include adaptiveValue("padding-bottom", 70, 70);
+	background-color: #0c0b08;
+	display: flex;
+	// .main-slider__container
+	&__container {
+		// .main-slider__container_wide
+		&_wide {
+			flex: 1 1 auto;
+			position: relative;
+		}
+	}
+	// .main-slider__menu
+	&__menu {
+	}
+	// .main-slider__scroll
+	&__scroll {
+		position: absolute;
+		bottom: 0;
+		right: rem(15);
+	}
+}
+.body-main-slider {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	// .body-main-slider__swiper
+	&__swiper {
+		flex: 1 1 auto;
+		align-items: center;
+	}
+	// .body-main-slider__slide
+	&__slide {
+		height: 100%;
+	}
+	// .body-main-slider__controll
+	&__controll {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@include adaptiveValue("padding-top", 88, 88);
+	}
+}
+.slide-main-slider {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	padding: 25px 0 0 0;
+	opacity: 0 !important;
+	pointer-events: none;
+	&.swiper-slide-active {
+		pointer-events: auto;
+		opacity: 1 !important;
+	}
+	// .slide-main-slider__content
+	&__content {
+		align-self: center;
+		padding-right: 40px;
+		display: grid;
+		gap: 32px;
+		max-width: rem(500);
+		justify-items: start; /* и кнопка будет слева и не на всю ширину родителя */
+	}
+	// .slide-main-slider__header
+	&__header {
+	}
+	// .slide-main-slider__text
+	&__text {
+	}
+	// .slide-main-slider__button
+	&__button {
+	}
+	// .slide-main-slider__image-ibg
+	&__image-ibg {
+		margin-right: percent(25, 650);
+		position: relative;
+		max-height: 736px;
+		height: 100%;
+		align-self: center;
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			background-color: $mainYellow;
+			transition: transform 0.3s ease 0s;
+			width: percent(435, 619);
+			height: percent(435, 688);
+		}
+		&::before {
+			top: 0;
+			right: 0;
+			transform: translate(25px, -25px);
+		}
+		&::after {
+			bottom: 0;
+			left: 0;
+			transform: translate(-25px, 25px);
+		}
+		img {
+			transition: transform 0.3s ease 0s;
+			z-index: 2;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				&::before {
+					transform: translate(30px, -30px);
+				}
+				&::after {
+					transform: translate(-30px, 30px);
+				}
+				img {
+					transform: scale(1.05);
+				}
+			}
+		}
+	}
+}
+.block-header {
+	// .block-header__sub-title
+	&__sub-title {
+	}
+	// .block-header__title
+	&__title {
+	}
+}
+.menu-main-slider {
+	position: absolute;
+	left: rem(15); /* так как это абсолют, а ему все равно на паддинки, и что б он не прижимался мы зададим ему влева 15px */
+	top: 0;
+	display: flex;
+	gap: rem(40);
+	height: 100%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	// .menu-main-slider__link
+	&__link {
+		font-size: rem(18); /* мы используем ремы если мы хотим что бы объект реагировал на изменение размера шрифта браузера по умолчанию и пишем пиксели там где мы не хотим что то менялось */
+		line-height: 175%;
+		letter-spacing: 0.04em;
+		color: $mainWhite;
+		transform: rotate(-180deg);
+		writing-mode: vertical-lr; /* свойство которое делает текст вертикальным */
+		@media (any-hover: hover) {
+			// то есть ховеры сработают только на устройствах где есть мышь, а на тач скринах не сработают
+			&:hover {
+				color: $mainYellow;
+			}
+		}
+		&_current {
+			color: $mainYellow;
+		}
+	}
+}
+
+//====================================================================================================

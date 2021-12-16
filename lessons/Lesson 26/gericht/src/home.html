@@ -1,0 +1,84 @@
+<!-- сайт практики
+https://wordpress.iqonic.design/product/wp-free/geritcht/home-2/ 
+-->
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"Главная"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="mainpage">
+				<section data-fullscreen class="mainpage__slider main-slider">
+					<!-- Сделаем объект фулскриновым с помощью атрибута data-fullscreen. 
+					Этот атрибут нужен по двум причинам - во первых когда мы находимся на тач скринах то подключается хак с помощью css элементов(на мобильных
+					устройствах 100vh не учитывет меню браузера и когда мы пользуемся сайтами - меню то появляется то пропадает и на самом деле фулскрин перестает
+					быть фулскрином) -->
+					<div class="main-slider__container main-slider__container_wide">
+						<div class="main-slider__container body-main-slider">
+							<div class="body-main-slider__swiper"><!-- сниппет - swiper . Это оболочка самого слайдера. По вот этому __swiper код кот. мы подключим будет самостоятельно добавлять классы к этой структуре, потому что по умолчанию свайпер работает со своими классами. По этому создали функцию function bildSliders(), которая находит тут объекты классы которых содержит __swiper и набрасывают классы свайпера на вот эту конструкцию. -->
+								<div class="body-main-slider__slide slide-main-slider"><!-- сам слайдер -->
+									<!-- мы находимся внутри слайда -->
+									<div class="slide-main-slider__content">
+										<div class="slide-main-slider__header block-header block-header_big block-header_left">
+											<div class="block-header__sub-title">Chase the new Flavour</div>
+											<h2 class="block-header__title">The key to Fine dining</h2>
+										</div>
+										<div class="slide-main-slider__text">
+											Sit tellus lobortis sed senectus vivamus molestie. Condimentum volutpat morbi facilisis quam scelerisque sapien. Et, penatibus aliquam amet tellus
+										</div>
+										<a href="" class="slide-main-slider__button button">Explore Menu</a><!-- если мы куда то переходим то это ссылка, если как в бургере - мы никуда не переходим, мы просто хотим что то получать по клику значит это кнопка -->
+									</div>
+									<a href class="slide-main-slider__image-ibg">
+										<img src="@img/mainpage/mainslider/01.jpg" alt="Картинка еды">
+									</a>
+								</div>
+								<div class="body-main-slider__slide slide-main-slider">
+									<div class="slide-main-slider__content">
+										<div class="slide-main-slider__header block-header block-header_big block-header_left">
+											<div class="block-header__sub-title">Chase the new Flavour</div>
+											<h2 class="block-header__title">The key</h2>
+										</div>
+										<div class="slide-main-slider__text">
+											Sit tellus lobortis sed senectus vivamus molestie.
+										</div>
+										<a href="" class="slide-main-slider__button button">Explore Menu</a>
+									</div>
+									<a href class="slide-main-slider__image-ibg">
+										<img src="@img/mainpage/mainslider/02.jpg" alt="Картинка еды">
+									</a>
+								</div>
+								<div class="body-main-slider__slide slide-main-slider">
+									<div class="slide-main-slider__content">
+										<div class="slide-main-slider__header block-header block-header_big block-header_left">
+											<div class="block-header__sub-title">Chase the new Flavour</div>
+											<h2 class="block-header__title">The key to Fine dining</h2>
+										</div>
+										<div class="slide-main-slider__text">
+											Sit tellus lobortis sed senectus vivamus molestie. Condimentum volutpat morbi facilisis quam scelerisque sapien. Et, penatibus aliquam amet tellus
+										</div>
+										<a href="" class="slide-main-slider__button button">Explore Menu</a>
+									</div>
+									<a href class="slide-main-slider__image-ibg">
+										<img src="@img/mainpage/mainslider/03.jpg" alt="Картинка еды">
+									</a>
+								</div>
+							</div>
+							<div class="body-main-slider__controll">Тут буллеты</div><!-- это будет оболочка, сюда мы будем из слайдера выплевывать точки 01,02,03 -->
+						</div>
+						<nav class="main-slider__menu menu-main-slider">
+							<!-- боковое меню -->
+							<a href="" class="menu-main-slider__link menu-main-slider__link_current">#Gericht</a>
+							<a href="" class="menu-main-slider__link">#Bar</a>
+						</nav>
+						<button type="button" class="main-slider__scroll scroll">Scroll</button>
+					</div>
+				</section>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>
